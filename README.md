@@ -20,7 +20,7 @@ The Iris data set is a multivariate data set and it is a best known and understo
 [4]. http://lab.fs.uni-lj.si/lasin/wp/IMIT_files/neural/doc/seminar8.pdf
 [5]. https://technichesblog.wordpress.com/2015/10/25/matlab-code-to-import-iris-data/
 
-## My investigations
+## My investigations (DRAFT)
 First I've tried to convert the data from iris data set from strings to float numbers (def function make float) but it didn't work (the last columns couldn't be converted to float or number). 
 
 *def makefloat(teststr):
