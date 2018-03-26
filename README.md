@@ -20,4 +20,42 @@ The Iris data set is a multivariate data set and it is a best known and understo
 [4]. http://lab.fs.uni-lj.si/lasin/wp/IMIT_files/neural/doc/seminar8.pdf
 [5]. https://technichesblog.wordpress.com/2015/10/25/matlab-code-to-import-iris-data/
 
+## My investigations
+First I've tried to convert the data from iris data set from strings to float numbers (def function make float) but it didn't work (the last columns couldn't be converted to float or number). 
 
+*def makefloat(teststr):
+  try:
+    return float(teststr)  # return a floating point value if possibe.
+  except:
+    return teststr  # otherwise return the string as is*
+    
+Every time I tried to deal with dataset I couldn't because the last column contains text. Then, I've tried to delete the last column (named class), so I could get a dataset consisted only with numbers using pandas as it follows.
+
+*data = pandas.read_csv('data/iris.csv')  # select csv file
+data = data.drop(['class'], axis=1)  # delete the column named 'class'
+data.to_csv('data/datairis.csv') # create new file (that not contains the column 'class')*
+
+After I got a dataset that contained only numbers I tried to find a way to find the min and max values of each column. But every code that I've tried didn't work.
+
+*with open("data/datairis.csv", "r") as f:
+  
+  lmin_row = []
+  lmin_col = []
+  
+  for row in csv.reader(f):
+   row = map(float, row)
+   lmin_row.append(min(row))
+
+   if lmin_col:
+     lmin_col = map(min, lmin_col, row)
+    else:
+      lmin_col = row
+  print("Min per row:", lmin_row)
+  print("Min per col:", lmin_col)
+  
+  -> lmin_row.append(min(row)) ValueError: could not convert string to float: 'sepal length'*
+  
+  After so many attempts to get the min and max values of each column I've started to read more about the Iris Data Set and I've found an article about Iris Data Set and Machine Learning written by Jason Brownlee, Ph.D and he aimed to help professional developers to get started and confidently apply machine learning to address complex problems. In the article Jason Brownlee explains in a simple way about how to do machine learning using Python and he used Iris Data Set as an example using some key libraries , suchh as numpy, pandas, matplotlib, scipy and sklearn. In a easy and fast way I could analyse the data: getting descriptions (mean, min, max values and percentiles) of each attribute, creating histogram of each numerical variable.
+  
+  
+  
