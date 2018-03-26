@@ -1,4 +1,5 @@
 #Noa P Prada Schnor 2018-03-24
+#Based on #https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 
 #import libraries to help to analyse the data set
 import csv
