@@ -1,6 +1,7 @@
 # Programming-and-Scripting-Project-2018
+###### Project instruction
 The project entails you researching the data set, and then writing documentation and code in the Python programming language based on that research. An online search for information on the data set will convince you that many people have investigated and written about it previously, and many of those are not experienced programmers. You are expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed. 
-You might do that for this project as follows:
+###### You might do that for this project as follows:
 - [x] Research background information about the data set and write a summary about it
 - [ ] Keep a list of references you used in completing the project
 - [ ] Download the data set and write some Python code to investigate it
