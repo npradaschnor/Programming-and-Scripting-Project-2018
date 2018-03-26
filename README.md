@@ -1,7 +1,7 @@
 # Programming-and-Scripting-Project-2018
 The project entails you researching the data set, and then writing documentation and code in the Python programming language based on that research. An online search for information on the data set will convince you that many people have investigated and written about it previously, and many of those are not experienced programmers. You are expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed. 
 You might do that for this project as follows:
-- [ ] Research background information about the data set and write a summary about it
+- [x] Research background information about the data set and write a summary about it
 - [ ] Keep a list of references you used in completing the project
 - [ ] Download the data set and write some Python code to investigate it
 - [ ] Summarise the data set by, for example, calculating the maximum, minimum and mean of each column of the data set. A Python script will quickly do this for you
@@ -13,10 +13,10 @@ The iris data set was and collected by Edgar Anderson (1935)  and it contains da
 The Iris data set is a multivariate data set and it is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc. It is available in CSV format at Central Michigan University - CMU website (http://lib.stat.cmu.edu) [3, 5].
 
 #### References
-[1] https://www.lynda.com/Apache-Spark-tutorials/Preprocessing-Iris-data-set/559180/674634-4.html
-[2] http://www.fon.hum.uva.nl/praat/manual/iris_data_set.html
-[3] http://www.idvbook.com/teaching-aid/data-sets/the-iris-data-set/
-[4] http://lab.fs.uni-lj.si/lasin/wp/IMIT_files/neural/doc/seminar8.pdf
-[5] https://technichesblog.wordpress.com/2015/10/25/matlab-code-to-import-iris-data/
+[1]. https://www.lynda.com/Apache-Spark-tutorials/Preprocessing-Iris-data-set/559180/674634-4.html
+[2]. http://www.fon.hum.uva.nl/praat/manual/iris_data_set.html
+[3]. http://www.idvbook.com/teaching-aid/data-sets/the-iris-data-set/
+[4]. http://lab.fs.uni-lj.si/lasin/wp/IMIT_files/neural/doc/seminar8.pdf
+[5]. https://technichesblog.wordpress.com/2015/10/25/matlab-code-to-import-iris-data/
 
 
