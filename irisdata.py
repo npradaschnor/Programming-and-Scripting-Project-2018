@@ -1,5 +1,6 @@
 #Noa P Prada Schnor 2018-03-24
 #Based on #https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+#Based on https://campus.datacamp.com/courses/pandas-foundations/data-ingestion-inspection?ex=1
 
 #import libraries to help to analyse the data set
 import csv
@@ -25,8 +26,15 @@ from sklearn import datasets
 with open ('data/iris.csv') as f: #open iris data set
   names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class'] 
   dataset = pandas.read_csv(f, names=names) #give each column a 'header' a 'name'
-
+  
+#get knowing my dataset
+  print(type(dataset)) #type
   print(dataset.shape) # get the info about row many rows and columns
+  print(dataset.columns) #name of the columns
+  print(type(dataset.columns))#pandas index
+  print(dataset.index) #daytime index
+  print(dataset.tail(50)) #returns the last 50 rows, so I can see how my data looks like.. I could use the dataset.head(50) to check the first 50 rows
+  print(dataset.info()) #returns a index: datatimeindex, number of columns, type of data in each column, data types of the whole dataset, etc.
 
   # describe the data: count, mean, minimun/maximum values and percentiles.
   print(dataset.describe())
