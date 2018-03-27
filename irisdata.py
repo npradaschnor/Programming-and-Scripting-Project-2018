@@ -30,7 +30,7 @@ with open ('data/iris.csv') as f: #open iris data set
   names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class'] 
   dataset = pandas.read_csv(f, names=names) #give each column a 'header' a 'name'
   
-#get to knowing the dataset
+  #info about the dataset
   print(type(dataset)) #type
   print(dataset.shape) # get the info about row many rows and columns
   print(dataset.columns) #name of the columns
@@ -41,23 +41,34 @@ with open ('data/iris.csv') as f: #open iris data set
 
   # describe the data: count, mean, minimun/maximum values and percentiles.
   print(dataset.describe())
-
+  
   dataset.hist('sepal-length') #plot the histogram of sepal lenght
+  plt.title('Histogram of sepal lenght') #title of histogram
+  plt.xlabel('Sepal lenght in cm') #x axis label
+  plt.ylabel('Number of sample') #y axis label
   plt.savefig('iris_hist_sepallenght.png') #save plot
   plt.show() #show the histogram
 
   dataset.hist('sepal-width')  # plot the histogram of sepal width
+  plt.title('Histogram of sepal width') #title of histogram
+  plt.xlabel('Sepal width in cm')  # x axis label
+  plt.ylabel('Number of sample')  # y axis label
   plt.savefig('iris_hist_sepalwidth.png') #save plot
   plt.show()  # show the histogram
 
   dataset.hist('petal-length')  # plot the histogram of petal lenght
+  plt.title('Histogram of petal lenght') #title of histogram
+  plt.xlabel('Petal lenght in cm')  # x axis label
+  plt.ylabel('Number of sample')  # y axis label
   plt.savefig('iris_hist_petallenght.png') #save plot
   plt.show()  # show the histogram
 
   dataset.hist('petal-width')  # plot the histogram of petal width
+  plt.title('Histogram of petal width') #title of histogram
+  plt.xlabel('Petal width in cm')  # x axis label
+  plt.ylabel('Number of sample')  # y axis label
   plt.savefig('iris_hist_petalwidth.png') #save plot
   plt.show()  # show the histogram
-
   sl_arr = dataset['sepal-length'].values
   print(type(sl_arr)) #print the type of var
 
