@@ -19,6 +19,7 @@ The Iris data set is a multivariate data set and it is a best known and understo
 [3]. http://www.idvbook.com/teaching-aid/data-sets/the-iris-data-set/
 [4]. http://lab.fs.uni-lj.si/lasin/wp/IMIT_files/neural/doc/seminar8.pdf
 [5]. https://technichesblog.wordpress.com/2015/10/25/matlab-code-to-import-iris-data/
+[6]. https://statistics.laerd.com/statistical-guides/understanding-histograms.php
 
 ## My investigations (DRAFT)
 First I've tried to convert the data from iris data set from strings to float numbers (def function make float) but it didn't work (the last columns couldn't be converted to float or number). 
@@ -56,6 +57,10 @@ After I got a dataset that contained only numbers I tried to find a way to find 
   -> lmin_row.append(min(row)) ValueError: could not convert string to float: 'sepal length'*
   
   After so many attempts to get the min and max values of each column I've started to read more about the Iris Data Set and I've found an article about Iris Data Set and Machine Learning written by Jason Brownlee, Ph.D and he aimed to help professional developers to get started and confidently apply machine learning to address complex problems. In the article Jason Brownlee explains in a simple way about how to do machine learning using Python and he used Iris Data Set as an example using some key libraries , suchh as numpy, pandas, matplotlib, scipy and sklearn. In a easy and fast way I could analyse the data: getting descriptions (mean, min, max values and percentiles) of each attribute, creating histogram of each numerical variable. Moreover, I've found an online course about Pandas DataFrame on DataCamp and it help me to understand some code/functions and based on the videos I could create some of the codes, specially to get more info about the data set that I'm working on it. All these websites opened my mind to Pandas, Numpy, Matplot, etc. Then, it got easier to understand how I could get graphics in a few lines of code. Besides, reading some tutorials (Pyplot, Numpy, Pandas) I could improve my plots by giiving them a title, axis label, etc.
+  I chose to get the following plots:
+  - Histogram: 'A histogram is a plot that lets you discover, and show, the underlying frequency distribution (shape) of a set of continuous data. This allows the inspection of the data for its underlying distribution (e.g., normal distribution), outliers, skewness, etc'[6].
+  - Plot on Dataframe: 'is a convenience to plot all of the columns with labels'
+  - Multiple bar plot
   
   
   
