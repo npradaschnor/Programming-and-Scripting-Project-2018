@@ -15,8 +15,7 @@ The project entails you researching the data set, and then writing documentation
   Iris dataset is a multivariate dataset of three classes of Irises and it was collected by the American botanist Edgar Anderson (1935) and introduced by the British statistician and geneticist Ronald Fisher in his article published in 1936 <i>"The Use of Multiple Measurements in Taxonomic Problems"<i>. The iris dataset is available online from University California Irvine's (UCI) machine-learning repository of datasets (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data). 
 
 
-![Ronald Fisher] (relative/path/to/R._A._Fischer.jpg raw=true "Ronald Fisher")
-
+![Ronald Fisher] (https://en.wikipedia.org/wiki/Ronald_Fisher#/media/File:R._A._Fischer.jpg)
 By  http://www.swlearning.com/quant/kohler/stat/biographical_sketches/Fisher_3.jpeg, Public Domain, https://commons.wikimedia.org/w/index.php?curid=4233489
   
   and it contains data with 150 random samples of flowers of 50 samples from each of three species of irises (*setosa*, *versicolor* and *virginica*). Two parts of the flower were measured: sepal and pedal (lenght and width of each part in cm, total of four features). Therefore, there are 5 attributes in the data base: sepal lenght in cm, sepal widht in cm, petal lenght in cm, petal width in cm and class - *iris setosa*, *iris versicolor* and *iris virginica*.  This data set was used by Ronald Fisher (1936) formultiple measurements introducing linear-discriminant-function technique [1,2,4,5].
