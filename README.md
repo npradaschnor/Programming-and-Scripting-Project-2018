@@ -36,6 +36,8 @@ The project entails you researching the data set, and then writing documentation
   <li>https://statistics.laerd.com/statistical-guides/understanding-histograms.php</li>
   </ol>
 
+[[back to top](#project-instruction)]
+
 ## My investigations (DRAFT)
 
 Before starting the project some programs, files and libraries must be downloaded and installed:
