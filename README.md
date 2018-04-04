@@ -89,28 +89,28 @@ with open("data/datairis.csv", "r") as f:
   --> Print all styles available (Matplot)
   
   ```diff
-   +print(plt.style.available)
+  print(plt.style.available)
   ```
     
   --> Open the Iris dataset and each column got a 'header'
   
   ```diff 
-  +with open ('data/iris.csv') as f: #open iris data set
-  +names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class'] 
-  +dataset = pandas.read_csv(f, names=names)</b>
+  with open ('data/iris.csv') as f: #open iris data set
+   names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class'] 
+   dataset = pandas.read_csv(f, names=names)</b>
    ```
   
   --> Information about the dataset: type, number of rows and columns, name of the columns, pandas index, datatimeindex(number of columns, type of data in each column, ...). Moreover, to get a general idea about the dataset and to take a closer look at the data itself the function  (dataset.tail(20)) was used to check out the last 20 rows.
   got a general idea about your data set
   
   ```diff 
-  +print(type(dataset)) 
-  +print(dataset.shape) 
-  +print(dataset.columns)
-  +print(type(dataset.columns))
-  +print(dataset.index) 
-  +print(dataset.tail(20)) 
-  +print(dataset.info()) 
+  print(type(dataset)) 
+  print(dataset.shape) 
+  print(dataset.columns)
+  print(type(dataset.columns))
+  print(dataset.index) 
+  print(dataset.tail(20)) 
+  print(dataset.info()) 
   ```
   --> Summary statistics that exclude NaN values. Return the count, mean, standard deviation, minimum and maximum values and the quantiles of the data.
   
