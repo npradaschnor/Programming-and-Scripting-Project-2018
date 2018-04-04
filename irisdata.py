@@ -37,8 +37,8 @@ with open ('data/iris.csv') as f: #open iris data set
   print(dataset.columns) #name of the columns
   print(type(dataset.columns))#pandas index
   print(dataset.index) #daytime index
-  print(dataset.tail(50)) #returns the last 50 rows, so I can see how my data looks like.. I could use the dataset.head(50) to check the first 50 rows
-  print(dataset.info()) #returns a index: datatimeindex, number of columns, type of data in each column, data types of the whole dataset, etc.
+  print(dataset.tail(20)) #returns the last 20 rows, so I can see how my data looks like.. I could use the dataset.head(20) to check the first 20 rows
+  print(dataset.info()) #returns an index: datatimeindex, number of columns, type of data in each column, data types of the whole dataset, etc.
 
   # describe the data: count, mean, minimun/maximum values and percentiles.
   print(dataset.describe())
