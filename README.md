@@ -14,13 +14,14 @@ The iris data set was and collected by Edgar Anderson (1935)  and it contains da
 The Iris data set is a multivariate data set and it is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc. It is available in CSV format at Central Michigan University - CMU website (http://lib.stat.cmu.edu) [3, 5].
 
 #### References
-<ol>
-  <li> [1]. https://www.lynda.com/Apache-Spark-tutorials/Preprocessing-Iris-data-set/559180/674634-4.html</li>
-  <li>[2]. http://www.fon.hum.uva.nl/praat/manual/iris_data_set.html</li>
-  <li>[3]. http://www.idvbook.com/teaching-aid/data-sets/the-iris-data-set/</li>
-  <li>[4]. http://lab.fs.uni-lj.si/lasin/wp/IMIT_files/neural/doc/seminar8.pdf</li>
-  <li>[5]. https://technichesblog.wordpress.com/2015/10/25/matlab-code-to-import-iris-data/</li>
-  <li>[6]. https://statistics.laerd.com/statistical-guides/understanding-histograms.php</li>
+<ol type="[1]">
+  <li>https://www.lynda.com/Apache-Spark-tutorials/Preprocessing-Iris-data-set/559180/674634-4.html</li>
+  <li>http://www.fon.hum.uva.nl/praat/manual/iris_data_set.html</li>
+  <li>http://www.idvbook.com/teaching-aid/data-sets/the-iris-data-set/</li>
+  <li>http://lab.fs.uni-lj.si/lasin/wp/IMIT_files/neural/doc/seminar8.pdf</li>
+  <li>https://technichesblog.wordpress.com/2015/10/25/matlab-code-to-import-iris-data/</li>
+  <li>https://statistics.laerd.com/statistical-guides/understanding-histograms.php</li>
+  </ol>
 
 ## My investigations (DRAFT)
 First I've tried to convert the data from iris data set from strings to float numbers (def function make float) but it didn't work (the last columns couldn't be converted to float or number). 
