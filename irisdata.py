@@ -85,3 +85,9 @@ with open ('data/iris.csv') as f: #open iris data set
   plt.yscale('log') #fixing scales - log scale on vertical axis
   plt.savefig('iris.log_verticalaxis.png') #save plot
   plt.show() # show the plot
+
+  dataset.plot(kind='barh', stacked=True)#multiple bar plot
+  plt.savefig('iris_plotdataframe.png')
+  plt.xlabel('in cm')  # x axis label
+  plt.ylabel('Sample of 150 flowers')  # y axis label
+  plt.show()
