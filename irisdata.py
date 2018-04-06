@@ -5,14 +5,15 @@
 
 #import key libraries to help to analyse the data set
 import csv
-import pandas
+import pandas as pd
 import scipy
-import numpy
-import sklearn
+import numpy as np
 import seaborn as sns
 from pandas.plotting import scatter_matrix
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-bright') #style of plot = seaborn-bright (I can change based on what is available from print plt.style.available)
+import sklearn
+from sklearn import datasets
 from sklearn import model_selection
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
@@ -24,12 +25,14 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 from sklearn import datasets
-
+import scikit-learn
 print(plt.style.available)  # list all available styles (matplot)
 
 with open ('data/iris.csv') as f: #open iris data set
   names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class'] 
   dataset = pandas.read_csv(f, names=names) #give each column a 'header' a 'name'
+  
+  print(dataset.head()) #to check the header
   
   #info about the dataset
   print(type(dataset)) #type
@@ -91,3 +94,7 @@ with open ('data/iris.csv') as f: #open iris data set
   plt.xlabel('in cm')  # x axis label
   plt.ylabel('Sample of 150 flowers')  # y axis label
   plt.show()
+  
+  print(pd.isnull(dataset)) # To identify the rows that contain missing values. True will indicate that the value contained within the cell is a missing value, False means that the cell contains a ‘normal’ value. In this case, there are no missing values.
+
+  
