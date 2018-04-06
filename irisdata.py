@@ -24,8 +24,14 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
+from sklearn.preprocessing import StandardScaler
 from sklearn import datasets
+from sklearn.datasets import load_iris
+from sklearn.svm import LinearSVC
+from sklearn import cross_validation
+from sklearn.decomposition import PCA
 import scikit-learn
+
 print(plt.style.available)  # list all available styles (matplot)
 
 with open ('data/iris.csv') as f: #open iris data set
@@ -97,4 +103,38 @@ with open ('data/iris.csv') as f: #open iris data set
   
   print(pd.isnull(dataset)) # To identify the rows that contain missing values. True will indicate that the value contained within the cell is a missing value, False means that the cell contains a ‘normal’ value. In this case, there are no missing values.
 
+dataset = datasets.load_iris() #another way of loading Iris dataset via sklearn
+
+X = dataset.data
+y = dataset.target
+tgn = dataset.target_names
+
+pca = PCA(n_components=2)
+X_r = pca.fit(X).transform(X)
+
+lda = LinearDiscriminantAnalysis(n_components=2)
+X_r2 = lda.fit(X, y).transform(X)
+
+print(pca.explained_variance_ratio_)#% of variance for each component
+
+plt.figure()
+colors = ['magenta', 'green', 'blue']
+lw = 2
+
+for color, i, tgn in zip(colors, [0, 1, 2], tgn):
+    plt.scatter(X_r[y == i, 0], X_r[y == i, 1], color=color, alpha=.8, lw=lw,
+                label=tgn)
+plt.legend(loc='best', shadow=False, scatterpoints=1)
+plt.title('Principal Component Analysis (PCA) of Iris dataset')
+plt.savefig('iris_PCA.png')
+
+plt.figure()
+for color, i, tgn in zip(colors, [0, 1, 2], tgn):
+    plt.scatter(X_r2[y == i, 0], X_r2[y == i, 1], alpha=.8, color=color,
+                label=tgn)
+plt.legend(loc='best', shadow=False, scatterpoints=1)
+plt.title('Linear Discriminant Analysis (LDA) of Iris dataset')
+plt.savefig('iris_LDA.png')
+
+plt.show()
   
