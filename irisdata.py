@@ -105,13 +105,9 @@ with open ('data/iris.csv') as f: #open iris data set
 
 dataset = datasets.load_iris() #another way of 	Load and return the iris dataset (classification) via sklearn
 
-import sklearn.datasets.fetch_mldata
-
-print(np.unique(dataset.target))#labels of dataset
-
 X = dataset.data
 y = dataset.target #The target attribute is the integer index of the category
-tgn = dataset.target_names
+tgn = dataset.target_names #"label names"
 
 pca = PCA(n_components=2) #Number of components to keep
 X_r = pca.fit(X).transform(X) #Fit the model with X and apply the dimensionality reduction on X
