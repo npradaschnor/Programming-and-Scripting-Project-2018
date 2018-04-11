@@ -160,6 +160,8 @@ LEMBRETE PARA MIM MESMA
 - ajeitar as images
 - ajeitar as legendas
 - atualizar e ajeitar as referencias....fazer nova referencia para textos depois da introducao?
+- rever o inicio da minha investigacao com as coisas necessarias e descrever mais cada um 
+- rever todas as bibliotecas que importei no codigo. usei todas?
 - terminar de explicar sobre cada tipo de analise feita, suas definicoes
 - explicar os resultados dos plots
 
