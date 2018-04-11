@@ -140,8 +140,7 @@ with open("data/datairis.csv", "r") as f:
   - Multiple bar plot
   <img src="https://image.ibb.co/j3O0cH/Figure_1.png">
   
-  -Scatter plot
-  A scatter plot is a graph in which a set of points plotted on a horizontal and vertical axes.As scatter plots show the extent of correlation between the values of the variables, they are an important tool in statistics. If there is no correlation between the variables the points will show randomly scattered on the coordinate plane. But, if there is a large correlation between the variables, the points concentrate near a straight line. Therefore, scatter plots are quite useful for data visualization as they illustrate a trend. Scatter plots shows not only the extent of correlation, but also the sense of the correlation. Neverthless, scatter plots not show the causation. 
+  -Scatter plot: A scatter plot is a graph in which a set of points plotted on a horizontal and vertical axes.As scatter plots show the extent of correlation between the values of the variables, they are an important tool in statistics. If there is no correlation between the variables the points will show randomly scattered on the coordinate plane. But, if there is a large correlation between the variables, the points concentrate near a straight line. Therefore, scatter plots are quite useful for data visualization as they illustrate a trend. Scatter plots shows not only the extent of correlation, but also the sense of the correlation. Neverthless, scatter plots not show the causation. 
   So, if the vertical (called y axis) variable increases and the horizontal (called x axis) variable also increases it means that there is a correlation (positive correlarion). The maximum positive correlation that is possible is +100% or +1 (all points in the plot lie along a straight line in a positive slope). In case the y axis variable decreases and the x axis increases or vice-versa it is a negative correlation. The maximum negative correlation that is possible is -100% or -1 (all the points in the plot lie along a straight line in a negative slope).  
 -------->https://whatis.techtarget.com/definition/scatter-plot
   
@@ -156,3 +155,11 @@ with open("data/datairis.csv", "r") as f:
  PCA vs LDA: Both LDA and PCA are used for dimensionality reduction, but PCA is described as an unsupervised method, because it does not take into account class labels and its object is to find the directions, known as principal components that maximize the variance in a dataset. While LDA is supervised method and computes the directions (“linear discriminants”) that will represent the axes that that maximize the separation between multiple classes.
   
 [[back to top](#project-instruction)]
+
+LEMBRETE PARA MIM MESMA
+- ajeitar as images
+- ajeitar as legendas
+- atualizar e ajeitar as referencias....fazer nova referencia para textos depois da introducao?
+- terminar de explicar sobre cada tipo de analise feita, suas definicoes
+- explicar os resultados dos plots
+
