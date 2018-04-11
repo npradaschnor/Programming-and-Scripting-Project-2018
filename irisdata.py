@@ -99,42 +99,46 @@ with open ('data/iris.csv') as f: #open iris data set
   plt.savefig('iris_plotdataframe.png')
   plt.xlabel('in cm')  # x axis label
   plt.ylabel('Sample of 150 flowers')  # y axis label
-  plt.show()
+  plt.show() #show the plot
   
   print(pd.isnull(dataset)) # To identify the rows that contain missing values. True will indicate that the value contained within the cell is a missing value, False means that the cell contains a ‘normal’ value. In this case, there are no missing values.
 
-dataset = datasets.load_iris() #another way of loading Iris dataset via sklearn
+dataset = datasets.load_iris() #another way of 	Load and return the iris dataset (classification) via sklearn
+
+import sklearn.datasets.fetch_mldata
+
+print(np.unique(dataset.target))#labels of dataset
 
 X = dataset.data
-y = dataset.target
+y = dataset.target #The target attribute is the integer index of the category
 tgn = dataset.target_names
 
-pca = PCA(n_components=2)
-X_r = pca.fit(X).transform(X)
+pca = PCA(n_components=2) #Number of components to keep
+X_r = pca.fit(X).transform(X) #Fit the model with X and apply the dimensionality reduction on X
 
-lda = LinearDiscriminantAnalysis(n_components=2)
-X_r2 = lda.fit(X, y).transform(X)
+lda = LinearDiscriminantAnalysis(n_components=2) #Number of components to keep
+X_r2 = lda.fit(X, y).transform(X) #Fit the model with X and apply the dimensionality reduction on X
 
-print(pca.explained_variance_ratio_)#% of variance for each component
+print(pca.explained_variance_ratio_)#The amount of variance explained by each of the selected components
 
 plt.figure()
-colors = ['magenta', 'green', 'blue']
-lw = 2
+colors = ['magenta', 'green', 'blue'] #Colors chose to plot ("dots" color)
+lw = 2 #linewidth
 
-for color, i, tgn in zip(colors, [0, 1, 2], tgn):
+for color, i, tgn in zip(colors, [0, 1, 2], tgn): 
     plt.scatter(X_r[y == i, 0], X_r[y == i, 1], color=color, alpha=.8, lw=lw,
-                label=tgn)
+                label=tgn) #X,Y = data positions; Alpha = blending value, between 0 (transparent) and 1 (opaque); lw = the linewidth of the marker edges. Note: The default edgecolors is ‘face’. You may want to change this as well. If None, defaults to rcParams lines.linewidth.The linewidth of the marker edges. The default edgecolors is ‘face’.
 plt.legend(loc='best', shadow=False, scatterpoints=1)
-plt.title('Principal Component Analysis (PCA) of Iris dataset')
-plt.savefig('iris_PCA.png')
+plt.title('Principal Component Analysis (PCA) of Iris dataset')#plot's title
+plt.savefig('iris_PCA.png')#save the fig named "iris-PCA.png"
 
 plt.figure()
 for color, i, tgn in zip(colors, [0, 1, 2], tgn):
     plt.scatter(X_r2[y == i, 0], X_r2[y == i, 1], alpha=.8, color=color,
-                label=tgn)
+                label=tgn) #X,Y = data positions; Alpha = blending value, between 0 (transparent) and 1 (opaque); lw = the linewidth of the marker edges. Note: The default edgecolors is ‘face’. You may want to change this as well. If None, defaults to rcParams lines.linewidth.The linewidth of the marker edges.
 plt.legend(loc='best', shadow=False, scatterpoints=1)
-plt.title('Linear Discriminant Analysis (LDA) of Iris dataset')
-plt.savefig('iris_LDA.png')
+plt.title('Linear Discriminant Analysis (LDA) of Iris dataset')#plot's title
+plt.savefig('iris_LDA.png')#save the fig named "iris-LDA.png"
 
-plt.show()
+plt.show() #show the plots
   
