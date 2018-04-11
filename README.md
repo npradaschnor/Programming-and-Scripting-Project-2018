@@ -13,6 +13,7 @@ The project entails you researching the data set, and then writing documentation
  [[back to top](#project-instruction)]
  
   Iris dataset is a multivariate dataset of three classes of Irises and it was collected by the American botanist Edgar Anderson (1935) and introduced by the British statistician and geneticist Ronald Fisher in his article published in 1936 <i>"The Use of Multiple Measurements in Taxonomic Problems"<i> introducing linear-discriminant-function technique. The Iris data set is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc. It is available in CSV format at Central Michigan University - CMU website (http://lib.stat.cmu.edu) [4, 6].The iris dataset is available online from University California Irvine's (UCI) machine-learning repository of datasets (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) [1,2,3,5,6]. 
+ "This is perhaps the best known database to be found in the pattern recognition literature. Fisher’s paper is a classic in the field and is referenced frequently to this day. (See Duda & Hart, for example.) The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant. One class is linearly separable from the other 2; the latter are NOT linearly separable from each other."http://scikit-learn.org/stable/datasets/index.html#datasets
 
 
 <img src="https://image.ibb.co/eJrdxH/Anderson_pres_1952.jpg" style="width: 700px; height:600px;"> <img src="https://image.ibb.co/jUYu4x/R_A_Fischer.jpg" style="width: 700px; height:600px;">
@@ -27,6 +28,9 @@ The project entails you researching the data set, and then writing documentation
   
   Therefore, there are 5 attributes in the data base: sepal lenght in cm, sepal widht in cm, petal lenght in cm, petal width in cm and class - *iris setosa*, *iris versicolor* and *iris virginica* [2,4,6,7].
  The archive of Iris dataset can be view with any text editor and it contains 5 columns in each row: first four is the features and the fifth one is the label[1].
+ 
+ <img src="https://image.ibb.co/kTbs2H/2018_04_11_13_05_03_sq_Es_Wbo_png_451_592.png">
+ Iris Dataset characteristics. From: http://scikit-learn.org/stable/datasets/index.html#datasets
 
 #### References
 [[back to top](#project-instruction)]
@@ -137,7 +141,8 @@ with open("data/datairis.csv", "r") as f:
   <img src="https://image.ibb.co/j3O0cH/Figure_1.png">
   
   **Linear transformation techniques** - Principal Component Analysis (PCA) and Linear Discriminant Analysis (LDA)
-  - PCA: identifies the combination of attributes (principal components, or directions in the feature space) that account for the most variance in the data. In this case, samples of the two fisrt components were plotted. Usually, PCA is used to speed up a machine learning algorithm, helping to visualize your data. As Iris dataset is 4 dimensional the data must be projects into 2, that way it is easy to understand better the data and it is easier to plot. After the reduction from 4 to 2 dimension data usually there is no particular meaning designated to each main component. 
+  - PCA: identifies the combination of attributes (principal components, or directions in the feature space) that account for the most variance in the data. It is a linear dimensionality reduction that uses Singular Value Decomposition of the data of dataset to a lower dimensional space. In this case, samples of the two fisrt components were plotted. Usually, PCA is used to speed up a machine learning algorithm, helping to visualize your data. As Iris dataset is 4 dimensional the data must be projects into 2, that way it is easy to understand better the data and it is easier to plot. After the reduction from 4 to 2 dimension data usually there is no particular meaning designated to each main component. 
+ 
   <img src="https://image.ibb.co/kRLD9x/PCAIris.png">
   
  - LDA: indentifies attributes that account for the most variance between classes. LDA In particular, LDA, in contrast to PCA, is a supervised method, using known class labels.
