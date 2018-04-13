@@ -56,10 +56,19 @@ Before starting the project some programs, files and libraries must be downloade
 <ol>
  <li>Python version 3.6 downloaded via Anaconda3</li>
  <li>Visual Studio Code version 1.21.1 set up with Github<li> 
- <li>Libraries imported: scipy, numpy, matplotlib, pandas, sklearn</li>
- <li>Iris dataset downloaded from UCI website and from other ways, such as via sklearn </li>
+  <li>Iris dataset downloaded from UCI website and from other ways, such as via sklearn </li>
+ <li>Libraries imported: scipy, numpy, matplotlib, pandas, sklearn, ESCREVER AQUI MAIS BIBLIOTECAS IMPORTADAS</li>
  </ol>
  
+About some of the libraries imported: 
+Pandas - for data-frame management package that allows for some useful function on the dataset.
+Numpy - package useful for lineal algebra.
+Matplotlib - good package to contruct visualizations.
+Seaborn - great package to make the data visualizations very compelling.
+Sklearn - package important to do machine learning in python.
+http://www.philipkalinda.com/ds3.html
+
+
 I've tried to convert the data from iris data set from strings to float numbers (def function make float) but it didn't work (the last columns couldn't be converted to float or number). 
 ```diff 
 def makefloat(teststr):
@@ -110,6 +119,8 @@ with open("data/datairis.csv", "r") as f:
   print(plt.style.available)
   ```
     
+    Then, I ran simple descriptive staatistics on iris data set. That way, I could effectively appproach the iris data set.
+      
   :arrow_right:Open the Iris dataset and each column got a 'header'
   
   ```diff 
@@ -118,10 +129,9 @@ with open("data/datairis.csv", "r") as f:
    dataset = pandas.read_csv(f, names=names)</b>
    ```
   
-  :arrow_right:Information about the dataset: type, number of rows and columns, name of the columns, pandas index, datatimeindex(number of columns, type of data in each column, ...). Moreover, to get a general idea about the dataset and to take a closer look at the data itself the function  (dataset.tail(20)) was used to check out the last 20 rows.
-  got a general idea about your data set
+  :arrow_right:Information about the dataset: type, number of rows and columns, name of the columns, pandas index, datatimeindex(number of columns, type of data in each column, ...). Moreover, to get a general idea about the dataset and to take a closer look at the data itself the function  (dataset.tail(20)) was used to check out the last 20 rows. That way, I got a general idea about the data set.
   
-  ```diff 
+   ```diff 
   print(type(dataset)) 
   print(dataset.shape) 
   print(dataset.columns)
@@ -130,11 +140,17 @@ with open("data/datairis.csv", "r") as f:
   print(dataset.tail(20)) 
   print(dataset.info()) 
   ```
-  :arrow_right:Summary statistics that exclude NaN values. Return the count, mean, standard deviation, minimum and maximum values and the quantiles of the data.
+  :arrow_right:Summary statistics that exclude NaN values -  table that summarises the numeric information in the dataset, such as count, mean, standard deviation, minimum and maximum values and the quantiles of the data. It  was useful to gain a general sense of how the data is structured and about the data per se. 
   
   ```diff 
   print(dataset.describe())
    ```
+  
+  Pivot table with the variables means ---FALAR SOBRE O QUE EH PIVOT TABEL
+ print(dataset.pivot_table(index='class', values=[
+      'sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))
+
+  
   :arrow_right:Plots
   
   :arrow_right_hook: Histogram: 'A histogram is a plot that lets you discover, and show, the underlying frequency distribution (shape) of a set of continuous data. This allows the inspection of the data for its underlying distribution (e.g., normal distribution), outliers, skewness, etc'[7].
@@ -163,6 +179,13 @@ with open("data/datairis.csv", "r") as f:
  :heavy_exclamation_mark:PCA vs LDA: Both LDA and PCA are used for dimensionality reduction, but PCA is described as an unsupervised method, because it does not take into account class labels and its object is to find the directions, known as principal components that maximize the variance in a dataset. While LDA is supervised method and computes the directions (“linear discriminants”) that will represent the axes that that maximize the separation between multiple classes.
   
 [[back to top](#project-instruction)]
+
+-----no comeco do projeto escrever issoo: This dataset can be approached in a number of different ways and this will depend on your objectives when starting out your analysis. I shall highlight the objectives later in the analysis. Let’s just describe the data so we know what we’re dealing with.
+http://www.philipkalinda.com/ds3.html
+
+------After graphing the features in a pair plot, it is clear that the relationship between pairs of features of a iris-setosa (in pink) is distinctly different from those of the other two species.
+There is some overlap in the pairwise relationships of the other two species, iris-versicolor (brown) and iris-virginica (green).
+https://www.kaggle.com/jchen2186/machine-learning-with-iris-dataset
 
 LEMBRETE PARA MIM MESMA
 - ajeitar as images
