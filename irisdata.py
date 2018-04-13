@@ -52,6 +52,12 @@ with open ('data/iris.csv') as f: #open iris data set
   # describe the data: count, mean, minimun/maximum values and percentiles.
   print(dataset.describe())
   
+   # pivot table with their means.
+print(dataset.pivot_table(index='class', values=[
+      'sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))
+
+  ##PLOTS
+  
   dataset.hist('sepal-length') #plot the histogram of sepal lenght
   plt.title('Histogram of sepal lenght') #title of histogram
   plt.xlabel('Sepal lenght in cm') #x axis label
