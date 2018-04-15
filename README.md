@@ -1,9 +1,9 @@
 # Programming-and-Scripting-Project-2018
 
 ###### Project instruction
-The project entails you researching the data set, and then writing documentation and code in the Python programming language based on that research. An online search for information on the data set will convince you that many people have investigated and written about it previously, and many of those are not experienced programmers. You are expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed. 
+The project entails the student researching the data set, and then writing documentation and code in the Python programming language based on that research. An online search for information on the data set will convince the student that many people have investigated and written about it previously, and many of those are not experienced programmers. The student is expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed. 
 
-###### You might do that for this project as follows:
+###### Smaller tasks that have to be done to complete the project:
 - [x] Research background information about the data set and write a summary about it
 - [x] Keep a list of references you used in completing the project
 - [x] Download the data set and write some Python code to investigate it
@@ -13,7 +13,7 @@ The project entails you researching the data set, and then writing documentation
 
 #### Python script is on :file_folder: "irisdata.py"
 
-## About Iris Dataset
+## Part 1: About Iris Dataset
  [[back to top](#project-instruction)]
  
   Iris dataset is a multivariate dataset of three classes of Irises and it was collected by the American botanist Edgar Anderson (1935) and introduced by the British statistician and geneticist Ronald Fisher in his article published in 1936 <i>"The Use of Multiple Measurements in Taxonomic Problems"<i> introducing linear-discriminant-function technique. Fisher's paper is referenced frequently to this day for being such a classic in the field. The Iris data set is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc. It is available in CSV format at Central Michigan University - CMU website (http://lib.stat.cmu.edu) [4, 6].The iris dataset is available online from University California Irvine's (UCI) machine-learning repository of datasets (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) [1,2,3,5,6]. 
@@ -22,8 +22,7 @@ The project entails you researching the data set, and then writing documentation
 <img src="https://image.ibb.co/jUYu4x/R_A_Fischer.jpg" style="width: 800px; height:700px;"><br>
 Edgar Anderson and Ronald Fisher
 
-  
-  The datasset contains data with 150 random samples of flowers of 50 instances from each of three species of irises (*setosa*, *versicolor* and *virginica*). Two parts of the flower were measured: sepal and pedal (lenght and width of each part in cm, total of four features)[1]. 
+   The datasset contains data with 150 random samples of flowers of 50 instances from each of three species of irises (*setosa*, *versicolor* and *virginica*). Two parts of the flower were measured: sepal and pedal (lenght and width of each part in cm, total of four features)[1]. 
    
  <img src="https://image.ibb.co/gbSzP7/irisdataset.png"><br>
  Iris attributes. From: https://rpubs.com/wjholst/322258
@@ -33,7 +32,7 @@ Edgar Anderson and Ronald Fisher
  <img src="https://image.ibb.co/kTbs2H/2018_04_11_13_05_03_sq_Es_Wbo_png_451_592.png"><br>
  Iris Dataset characteristics. From: http://scikit-learn.org/stable/datasets/index.html#datasets
 
-#### References
+#### References (Part 1)
 [[back to top](#project-instruction)]
 
 <ol type="[1]">
@@ -46,7 +45,7 @@ Edgar Anderson and Ronald Fisher
   <li>https://statistics.laerd.com/statistical-guides/understanding-histograms.php</li>
   </ol>
 
-## My investigations (DRAFT)
+## Part 2: My investigations (DRAFT)
 [[back to top](#project-instruction)]
 
 Before starting the project some programs, files and libraries must be downloaded and installed:
@@ -114,7 +113,9 @@ with open("data/datairis.csv", "r") as f:
   ```
  
 :clipboard: Note: the attempts to deal with Iris Dataset that didn't have sucess are not shown in the code block of 'irisdata.py' file.
- 
+
+[[back to top](#project-instruction)]
+
 After so many attempts to get the min and max values of each column I've started to read more about the Iris Data Set and I've found an article about Iris Data Set and Machine Learning written by Jason Brownlee, Ph.D and he aimed to help professional developers to get started and confidently apply machine learning to address complex problems. In the article Jason Brownlee explains in a simple way about how to do machine learning using Python and he used Iris Data Set as an example using some key libraries , such as numpy, pandas, matplotlib, scipy and sklearn. In a easy and fast way I could analyse the data: getting descriptions (mean, min, max values and percentiles) of each attribute, creating histogram of each numerical variable. Moreover, I've found an online course about Pandas DataFrame on DataCamp and it help me to understand some code/functions and based on the videos I could create some of the codes, specially to get more info about the data set that I'm working on it. All these websites opened my mind to Pandas, Numpy, Matplot, etc. Then, it got easier to understand how I could get graphics in a few lines of code. Besides, reading some tutorials (Pyplot, Numpy, Pandas) I could improve my plots by giving them a title, axis label, etc.
   
   That way, after I read so many articles about Iris dataset and machine learning, Exploratory Data Analysis the following steps have been done:
@@ -166,7 +167,9 @@ print(pd.isnull(dataset)) #isnull - pandas
 ```
 
 :arrow_right:Plots
-  
+
+[[back to top](#project-instruction)]
+
 :arrow_right_hook: Histogram: 'A histogram is a plot that lets you discover, and show, the underlying frequency distribution (shape) of a set of continuous data. This allows the inspection of the data for its underlying distribution (e.g., normal distribution), outliers, skewness, etc'[4,5].
  
   ```
@@ -250,7 +253,7 @@ print(pd.isnull(dataset)) #isnull - pandas
   
 [[back to top](#project-instruction)]
 
-#### References
+#### References (Part 2)
 [1]http://www.philipkalinda.com/ds3.html<br>
 [2]https://www.packtpub.com/mapt/book/big_data_and_business_intelligence/9781783553358/4/ch04lvl1sec47/pivot-tables<br>
 [3]https://pandas.pydata.org/pandas-docs/stable/generated/pandas.isnull.html<br>
@@ -264,7 +267,9 @@ print(pd.isnull(dataset)) #isnull - pandas
 [11]https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60<br>
 [12]http://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_vs_lda.html<br>
 [13]http://sebastianraschka.com/Articles/2014_python_lda.html<br>
-  
+
+[[back to top](#project-instruction)]
+
 LEMBRETE PARA MIM MESMA
 - ajeitar as images
 - ajeitar as legendas
