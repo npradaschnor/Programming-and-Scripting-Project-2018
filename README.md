@@ -52,8 +52,8 @@ Edgar Anderson and Ronald Fisher
 Before starting the project some programs, files and libraries must be downloaded and installed:
 <ol>
  <li>Python version 3.6 downloaded via Anaconda3</li>
- <li>Visual Studio Code version 1.21.1 downloaded and set up with Github<li> 
-  <li>Iris dataset downloaded from UCI website and from other ways, such as via sklearn </li>
+ <li>Visual Studio Code version 1.21.1 downloaded and set up with Github</li> 
+ <li>Iris dataset downloaded from UCI website and from other ways, such as via sklearn </li>
  <li>Libraries imported: csv, pandas, numpy, matplotlib and sklearn </li>
  </ol>
  
