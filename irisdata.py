@@ -154,19 +154,19 @@ plt.show() #show the plot
 
 dataset = datasets.load_iris() #load iris dataset via sklearn
 
-### 5.1 LINEAR TRANSFORMATION TECHNIQUES
+### 6.1 LINEAR TRANSFORMATION TECHNIQUES
 
 X = dataset.data
 y = dataset.target  # The target attribute is the integer index of the category
 tgn = dataset.target_names  # "label names"
 
-### 5.1.1 PRINCIPAL COMPONENT ANALYSIS - PCA
+### 6.1.1 PRINCIPAL COMPONENT ANALYSIS - PCA
 
 pca = PCA(n_components=2)  # Number of components to keep
 # Fit the model with X and apply the dimensionality reduction on X
 X_r = pca.fit(X).transform(X)
 
-### 5.1.2 LINEAR DISCRIMINANT ANALYSIS - LDA
+### 6.1.2 LINEAR DISCRIMINANT ANALYSIS - LDA
 
 lda = LinearDiscriminantAnalysis(
     n_components=2)  # Number of components to keep
@@ -194,6 +194,6 @@ plt.savefig('iris_LDA.png')  # save the fig named "iris-LDA.png"
 
 plt.show()  # show PCA and LDA plots
 
-# 6 VARIANCE RATIO OF THE TWO SELECTED COMPONENTS
+# 7 VARIANCE RATIO OF THE TWO SELECTED COMPONENTS
 # The amount of variance explained by each of the selected components
 print(pca.explained_variance_ratio_)
