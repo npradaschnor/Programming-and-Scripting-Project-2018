@@ -1,17 +1,16 @@
-#Noa P Prada Schnor 2018-03-24
-#Based on #https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
-#Based on https://campus.datacamp.com/courses/pandas-foundations/data-ingestion-inspection?ex=1
-#Based on https://matplotlib.org/tutorials/introductory/pyplot.html#sphx-glr-tutorials-introductory-pyplot-py
+#Noa P Prada Schnor From 2018-03-24 to 2018-04-29
+# Python script to analyse Iris Dataset
 
-#import key libraries to help to analyse the data set
+#IMPORTING KEY LIBRARIES TO HELP TO ANALYSE THE DATASET
 import csv
-import pandas as pd
+import pandas
 import scipy
 import numpy as np
 import seaborn as sns
 from pandas.plotting import scatter_matrix
 import matplotlib.pyplot as plt
-plt.style.use('seaborn-bright') #style of plot = seaborn-bright (I can change based on what is available from print plt.style.available)
+# style of plot = seaborn-bright (I can change based on what is available from print plt.style.available)
+plt.style.use('seaborn-bright')
 import sklearn
 from sklearn import datasets
 from sklearn import model_selection
@@ -28,119 +27,186 @@ from sklearn.preprocessing import StandardScaler
 from sklearn import datasets
 from sklearn.datasets import load_iris
 from sklearn.svm import LinearSVC
-from sklearn import cross_validation
+from sklearn import model_selection
 from sklearn.decomposition import PCA
-import scikit-learn
 
 print(plt.style.available)  # list all available styles (matplot)
 
-with open ('data/iris.csv') as f: #open iris data set
-  names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class'] 
-  dataset = pandas.read_csv(f, names=names) #give each column a 'header' a 'name'
-  
-  print(dataset.head()) #to check the header
-  
-  #info about the dataset
-  print(type(dataset)) #type
-  print(dataset.shape) # get the info about row many rows and columns
-  print(dataset.columns) #name of the columns
-  print(type(dataset.columns))#pandas index
-  print(dataset.index) #daytime index
-  print(dataset.tail(20)) #returns the last 20 rows, so I can see how my data looks like.. I could use the dataset.head(20) to check the first 20 rows
-  print(dataset.info()) #returns an index: datatimeindex, number of columns, type of data in each column, data types of the whole dataset, etc.
+# 1 OPEN IRIS DATASET
+with open('data/iris.csv') as f:  # open iris data set
+  names = ['sepal-length', 'sepal-width',
+           'petal-length', 'petal-width', 'class']
+  # give each column a 'header' a 'name'
+  dataset = pandas.read_csv(f, names=names)
 
-  # describe the data: count, mean, minimun/maximum values and percentiles.
-  print(dataset.describe())
+## 1.1 OTHER WAYS OF OPENING IRIS DATASET
+dataset1 = datasets.load_iris() #via sklearn
+
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+names1 = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+dataset2 = pandas.read_csv(url, names=names) #via Panda using URL
+
+# 2 CHECKING THE IRIS DATASET - BASIC INFO BEFORE ANALYSING IT
+
+## 2.1 CHECKING MISSING VALUES
+ 
+# To identify the rows that contain missing values. True will indicate that the value contained within the cell is a missing value, False means that the cell contains a ‘normal’ value. In this case, there are no missing values.
+print(pandas.isnull(dataset))
+
+## 2.2 CHECKING THE HEADER
+print(dataset.head())  # to check the header
+
+## 2.3 INFO ABOUT THE DATASET
+
+## 2.4 TYPE
+print(type(dataset))
+
+## 2.5 NUMBER OF ROWS AND COLUMNS
+print(dataset.shape) 
   
-   # pivot table with their means.
+## 2.6 NAME OF THE COLUMNS
+print(dataset.columns)  # name of the columns
+
+## 2.7 PANDAS INDEX
+print(type(dataset.columns))  
+  
+## 2.8 CLASS DISTRIBUTION
+print(dataset.groupby('class').size())
+
+## 2.9 DAYTIME INDEX
+print(dataset.index)
+ 
+## 2.10 DATASET INDEX
+print(dataset.info()) #index:datatimeindex,n.of columns,type of data of each column, data types of the whole dataset, etc.
+
+## 2.11 HOW THE DATA LOOKS LIKE
+print(dataset.tail(20)) #returns the last 20 rows. I could check the first 20 rows: dataset.head(20)
+
+## 2.12 PIVOT TABLE
 print(dataset.pivot_table(index='class', values=[
-      'sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))
+      'sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))#pivot table with their means
 
-  ##PLOTS
+## 2.13 DATA DESCRIPTION
+print(dataset.describe())  # count, mean, minimun/maximum values and percentiles.
+
+
+# 3 PLOTS
+
+## 3.1 HISTOGRAMS
+
+###3.1.1 HISTOGRAM OF EACH ATTRIBUTE
+
+dataset.hist('sepal-length')  # plot the histogram of sepal lenght
+plt.title('Histogram of sepal lenght')  # title of histogram
+plt.xlabel('Sepal lenght in cm')  # x axis label
+plt.ylabel('Number of sample')  # y axis label
+plt.savefig('iris_hist_sepallenght.png')  # save plot
+plt.show()  # show the histogram
+
+dataset.hist('sepal-width')  # plot the histogram of sepal width
+plt.title('Histogram of sepal width')  # title of histogram
+plt.xlabel('Sepal width in cm')  # x axis label
+plt.ylabel('Number of sample')  # y axis label
+plt.savefig('iris_hist_sepalwidth.png')  # save plot
+plt.show()  # show the histogram
+
+dataset.hist('petal-length')  # plot the histogram of petal lenght
+plt.title('Histogram of petal lenght')  # title of histogram
+plt.xlabel('Petal lenght in cm')  # x axis label
+plt.ylabel('Number of sample')  # y axis label
+plt.savefig('iris_hist_petallenght.png')  # save plot
+plt.show()  # show the histogram
+
+dataset.hist('petal-width')  # plot the histogram of petal width
+plt.title('Histogram of petal width')  # title of histogram
+plt.xlabel('Petal width in cm')  # x axis label
+plt.ylabel('Number of sample')  # y axis label
+plt.savefig('iris_hist_petalwidth.png')  # save plot
+plt.show()  # show the histogram
+
+###3.1.2 HISTOGRAM OF ALL 4 ATTRIBUTES
+dataset.hist() #histogram plot of all 4 attributes
+plt.savefig('iris_hist.png')  # save plot
+plt.show() #show plot
+
+## 3.2 PLOT DATAFRAME/SERIES
+ 
+### 3.2.1 SEPAL LENGHT
+sl_arr = dataset['sepal-length'].values
+print(type(sl_arr))  # print the type of var
   
-  dataset.hist('sepal-length') #plot the histogram of sepal lenght
-  plt.title('Histogram of sepal lenght') #title of histogram
-  plt.xlabel('Sepal lenght in cm') #x axis label
-  plt.ylabel('Number of sample') #y axis label
-  plt.savefig('iris_hist_sepallenght.png') #save plot
-  plt.show() #show the histogram
+plt.plot(sl_arr)  # plot array (matplotlib) sepal lenght
+plt.savefig('iris_plotarray_sepallenght.png')  # save plot
+plt.show()  # show the plot
 
-  dataset.hist('sepal-width')  # plot the histogram of sepal width
-  plt.title('Histogram of sepal width') #title of histogram
-  plt.xlabel('Sepal width in cm')  # x axis label
-  plt.ylabel('Number of sample')  # y axis label
-  plt.savefig('iris_hist_sepalwidth.png') #save plot
-  plt.show()  # show the histogram
+# 3.2.2 ALL 4 ATTRIBUTES
+dataset.plot()  # plot dataframe (pandas)
+plt.savefig('iris_plotdataframe.png')  # save plot
+plt.show()  # show the plot
 
-  dataset.hist('petal-length')  # plot the histogram of petal lenght
-  plt.title('Histogram of petal lenght') #title of histogram
-  plt.xlabel('Petal lenght in cm')  # x axis label
-  plt.ylabel('Number of sample')  # y axis label
-  plt.savefig('iris_hist_petallenght.png') #save plot
-  plt.show()  # show the histogram
+# 3.2.3 ALL ATTRIBUTES Y AXIS ON LOG SCALE
+dataset.plot()
+plt.yscale('log')  # fixing scales - log scale on vertical axis
+plt.savefig('iris.log_verticalaxis.png')  # save plot
+plt.show()  # show the plot
 
-  dataset.hist('petal-width')  # plot the histogram of petal width
-  plt.title('Histogram of petal width') #title of histogram
-  plt.xlabel('Petal width in cm')  # x axis label
-  plt.ylabel('Number of sample')  # y axis label
-  plt.savefig('iris_hist_petalwidth.png') #save plot
-  plt.show()  # show the histogram
-  sl_arr = dataset['sepal-length'].values
-  print(type(sl_arr)) #print the type of var
+## 4 MULTIPLE BAR PLOT-STACKED BAR GRAPH
+dataset.plot(kind='barh', stacked=True)  # multiple bar plot
+plt.savefig('iris_plotdataframe.png') #save the plot
+plt.xlabel('in cm')  # x axis label
+plt.ylabel('Sample of 150 flowers')  # y axis label
+plt.show()  # show the plot
 
-  plt.plot(sl_arr) #plot array (matplotlib) sepal lenght
-  plt.savefig('iris_plotarray_sepallenght.png') #save plot
-  plt.show() # show the plot
+# 5 BOX AND WHISKER PLOT
+color = dict(boxes='DarkGreen', whiskers='DarkOrange',medians='DarkBlue', caps='Gray')#colors
+dataset.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False, color=color)#plot type box
+plt.savefig('iris_box_and_whisker_plot.png') #save the plot
+plt.show() #show the plot
 
-  dataset.plot() #plot dataframe (pandas)
-  plt.savefig('iris_plotdataframe.png') #save plot
-  plt.show() # show the plot
+## 6 SCATTER PLOTS
 
-  dataset.plot()
-  plt.yscale('log') #fixing scales - log scale on vertical axis
-  plt.savefig('iris.log_verticalaxis.png') #save plot
-  plt.show() # show the plot
+dataset = datasets.load_iris() #load iris dataset via sklearn
 
-  dataset.plot(kind='barh', stacked=True)#multiple bar plot
-  plt.savefig('iris_plotdataframe.png')
-  plt.xlabel('in cm')  # x axis label
-  plt.ylabel('Sample of 150 flowers')  # y axis label
-  plt.show() #show the plot
-  
-  print(pd.isnull(dataset)) # To identify the rows that contain missing values. True will indicate that the value contained within the cell is a missing value, False means that the cell contains a ‘normal’ value. In this case, there are no missing values.
-
-dataset = datasets.load_iris() #another way of 	Load and return the iris dataset (classification) via sklearn
+### 5.1 LINEAR TRANSFORMATION TECHNIQUES
 
 X = dataset.data
-y = dataset.target #The target attribute is the integer index of the category
-tgn = dataset.target_names #"label names"
+y = dataset.target  # The target attribute is the integer index of the category
+tgn = dataset.target_names  # "label names"
 
-pca = PCA(n_components=2) #Number of components to keep
-X_r = pca.fit(X).transform(X) #Fit the model with X and apply the dimensionality reduction on X
+### 5.1.1 PRINCIPAL COMPONENT ANALYSIS - PCA
 
-lda = LinearDiscriminantAnalysis(n_components=2) #Number of components to keep
-X_r2 = lda.fit(X, y).transform(X) #Fit the model with X and apply the dimensionality reduction on X
+pca = PCA(n_components=2)  # Number of components to keep
+# Fit the model with X and apply the dimensionality reduction on X
+X_r = pca.fit(X).transform(X)
 
-print(pca.explained_variance_ratio_)#The amount of variance explained by each of the selected components
+### 5.1.2 LINEAR DISCRIMINANT ANALYSIS - LDA
+
+lda = LinearDiscriminantAnalysis(
+    n_components=2)  # Number of components to keep
+# Fit the model with X and apply the dimensionality reduction on X
+X_r2 = lda.fit(X, y).transform(X)
 
 plt.figure()
-colors = ['magenta', 'green', 'blue'] #Colors chose to plot ("dots" color)
-lw = 2 #linewidth
+colors = ['magenta', 'green', 'blue']  # Colors chose to plot ("dots" color)
+lw = 2  # linewidth
 
-for color, i, tgn in zip(colors, [0, 1, 2], tgn): 
+for color, i, tgn in zip(colors, [0, 1, 2], tgn):
     plt.scatter(X_r[y == i, 0], X_r[y == i, 1], color=color, alpha=.8, lw=lw,
-                label=tgn) #X,Y = data positions; Alpha = blending value, between 0 (transparent) and 1 (opaque); lw = the linewidth of the marker edges. Note: The default edgecolors is ‘face’. You may want to change this as well. If None, defaults to rcParams lines.linewidth.The linewidth of the marker edges. The default edgecolors is ‘face’.
+                label=tgn)  # X,Y = data positions; Alpha = blending value, between 0 (transparent) and 1 (opaque); lw = the linewidth of the marker edges. Note: The default edgecolors is ‘face’. You may want to change this as well. If None, defaults to rcParams lines.linewidth.The linewidth of the marker edges. The default edgecolors is ‘face’.
 plt.legend(loc='best', shadow=False, scatterpoints=1)
-plt.title('Principal Component Analysis (PCA) of Iris dataset')#plot's title
-plt.savefig('iris_PCA.png')#save the fig named "iris-PCA.png"
+plt.title('Principal Component Analysis (PCA) of Iris dataset')  # plot's title
+plt.savefig('iris_PCA.png')  # save the fig named "iris-PCA.png"
 
 plt.figure()
 for color, i, tgn in zip(colors, [0, 1, 2], tgn):
     plt.scatter(X_r2[y == i, 0], X_r2[y == i, 1], alpha=.8, color=color,
-                label=tgn) #X,Y = data positions; Alpha = blending value, between 0 (transparent) and 1 (opaque); lw = the linewidth of the marker edges. Note: The default edgecolors is ‘face’. You may want to change this as well. If None, defaults to rcParams lines.linewidth.The linewidth of the marker edges.
+                label=tgn)  # X,Y = data positions; Alpha = blending value, between 0 (transparent) and 1 (opaque); lw = the linewidth of the marker edges. Note: The default edgecolors is ‘face’. You may want to change this as well. If None, defaults to rcParams lines.linewidth.The linewidth of the marker edges.
 plt.legend(loc='best', shadow=False, scatterpoints=1)
-plt.title('Linear Discriminant Analysis (LDA) of Iris dataset')#plot's title
-plt.savefig('iris_LDA.png')#save the fig named "iris-LDA.png"
+plt.title('Linear Discriminant Analysis (LDA) of Iris dataset')  # plot's title
+plt.savefig('iris_LDA.png')  # save the fig named "iris-LDA.png"
 
-plt.show() #show the plots
-  
+plt.show()  # show PCA and LDA plots
+
+# 6 VARIANCE RATIO OF THE TWO SELECTED COMPONENTS
+# The amount of variance explained by each of the selected components
+print(pca.explained_variance_ratio_)
