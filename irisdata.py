@@ -53,42 +53,29 @@ dataset2 = pandas.read_csv(url, names=names) #via Panda using URL
 # To identify the rows that contain missing values. True will indicate that the value contained within the cell is a missing value, False means that the cell contains a ‘normal’ value. In this case, there are no missing values.
 print(pandas.isnull(dataset))
 
-## 2.2 CHECKING THE HEADER
-print(dataset.head())  # to check the header
-
-## 2.3 INFO ABOUT THE DATASET
-
-## 2.4 TYPE
+## 2.2 TYPE OF DATASET
 print(type(dataset))
 
-## 2.5 NUMBER OF ROWS AND COLUMNS
+## 2.3 NUMBER OF ROWS AND COLUMNS
 print(dataset.shape) 
   
-## 2.6 NAME OF THE COLUMNS
+## 2.4 NAME OF THE COLUMNS
 print(dataset.columns)  # name of the columns
-
-## 2.7 PANDAS INDEX
-print(type(dataset.columns))  
   
-## 2.8 CLASS DISTRIBUTION
+## 2.5 CLASS DISTRIBUTION
 print(dataset.groupby('class').size())
 
-## 2.9 DAYTIME INDEX
-print(dataset.index)
- 
-## 2.10 DATASET INDEX
+## 2.6 DATASET INDEX
 print(dataset.info()) #index:datatimeindex,n.of columns,type of data of each column, data types of the whole dataset, etc.
 
-## 2.11 HOW THE DATA LOOKS LIKE
+## 2.7 HOW THE DATA LOOKS LIKE
 print(dataset.tail(20)) #returns the last 20 rows. I could check the first 20 rows: dataset.head(20)
 
-## 2.12 PIVOT TABLE
-print(dataset.pivot_table(index='class', values=[
-      'sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))#pivot table with their means
+## 2.8 PIVOT TABLE
+print(dataset.pivot_table(index='class', values=['sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))#pivot table with their means
 
-## 2.13 DATA DESCRIPTION
+## 2.9 DATA DESCRIPTION
 print(dataset.describe())  # count, mean, minimun/maximum values and percentiles.
-
 
 # 3 PLOTS
 
