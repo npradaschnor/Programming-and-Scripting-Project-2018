@@ -16,7 +16,7 @@ The project entails the student researching the data set, and then writing docum
 ## Part 1: About Iris Dataset
  [[back to top](#project-instruction)]
  
-  Iris dataset is a multivariate dataset of three classes of Irises and it was collected by the American botanist Edgar Anderson (1935) and introduced by the British statistician and geneticist Ronald Fisher in his article published in 1936 <i>"The Use of Multiple Measurements in Taxonomic Problems"<i> introducing linear-discriminant-function technique. Fisher's paper is referenced frequently to this day for being such a classic in the field. The Iris data set is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc. It is available in CSV format at Central Michigan University - CMU website (http://lib.stat.cmu.edu) [4, 6].The iris dataset is available online from University California Irvine's (UCI) machine-learning repository of datasets (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) [1,2,3,5,6]. 
+  Iris dataset is a multivariate dataset of three classes of Irises and it was collected by the American botanist Edgar Anderson (1935) and introduced by the British statistician and geneticist Ronald Fisher in his article published in 1936 <i>"The Use of Multiple Measurements in Taxonomic Problems"<i> introducing linear-discriminant-function technique. Fisher's paper is referenced frequently to this day for being such a classic in the field. The Iris data set is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc [4, 6].The iris dataset is available online from University California Irvine's (UCI) machine-learning repository of datasets (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) [1,2,3,5,6]. 
  
 <img src="https://image.ibb.co/cbYW47/anderson_edgar_pdf.png" style="width: 700px; height:600px;"> <br>
 <img src="https://image.ibb.co/jUYu4x/R_A_Fischer.jpg" style="width: 800px; height:700px;"><br>
@@ -122,55 +122,104 @@ After so many attempts to get the min and max values of each column I've started
   
 :arrow_right: Print all styles available (Matplot)
   
+ :heavy_check_mark: Line 33 on :file_folder: irisdata.py
+  
   ```
   print(plt.style.available)
   ```
     
- Then, I ran simple descriptive staatistics on iris data set. That way, I could effectively appproach the iris data set.
+ Then, I ran simple descriptive statistics on iris data set. That way, I could effectively appproach the iris data set.
       
-:arrow_right:Open the Iris dataset and each column got a 'header'
+:arrow_right: # 1 Open the Iris dataset and each column got a 'header'
   
+ :heavy_check_mark: Lines 36 - 40 on :file_folder: irisdata.py
   ```
-  with open ('data/iris.csv') as f: #open iris data set
+with open ('data/iris.csv') as f: #open iris data set
    names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class'] 
    dataset = pandas.read_csv(f, names=names)</b>
    ```
   
-:arrow_right:Information about the dataset: type, number of rows and columns, name of the columns, pandas index, datatimeindex(number of columns, type of data in each column, ...). Moreover, to get a general idea about the dataset and to take a closer look at the data itself the function  (dataset.tail(20)) was used to check out the last 20 rows. That way, I got a general idea about the data set.
-  
+:arrow_right: #2 Information about the dataset: type, number of rows and columns, name of the columns, pandas index, datatimeindex(number of columns, type of data in each column, ...). Moreover, to get a general idea about the dataset and to take a closer look at the data itself the function  (dataset.tail(20)) was used to check out the last 20 rows. That way, I got a general idea about the data set.
+
+##2.1 Checking missing values
+To identify the rows that contain missing values. True will indicate that the value contained within the cell is a missing value, False means that the cell contains a ‘normal’ value. In this case, there are no missing values.
+
+:heavy_check_mark: Line 54 on :file_folder: irisdata.py
+ 
    ```
-  print(type(dataset)) 
-  print(dataset.shape) 
-  print(dataset.columns)
-  print(type(dataset.columns))
-  print(dataset.index) 
-  print(dataset.tail(20)) 
-  print(dataset.info()) 
+print(pandas.isnull(dataset))
+   ```
+ ##2.2 Type of dataset
+  
+ :heavy_check_mark: Line 57 on :file_folder: irisdata.py
+  
+  ```
+print(type(dataset)) 
   ```
   
-:arrow_right:Summary statistics that exclude NaN values -  table that summarises the numeric information in the dataset, such as count, mean, standard deviation, minimum and maximum values and the quantiles of the data. It  was useful to gain a general sense of how the data is structured and about the data per se. 
+ ##2.3 Number of rows and columns
+  
+ :heavy_check_mark: Line 60 on :file_folder: irisdata.py
   
   ```
-  print(dataset.describe())
-   ```
+print(dataset.shape)
+ ``` 
+ 
+ ##2.4 Name of the columns
+ 
+ :heavy_check_mark: Line 63 on :file_folder: irisdata.py
+ 
+  ```
+print(dataset.columns)
+  ```
   
-:arrow_right: Pivot table: tool used to organize and summarize data between databases. It facilitates rotational, pivotal and/or structural changes[2].
-    
+ ##2.5 Class distribution. There are 150 samples of flowers: 50 are <i>iris setosa<i>, 50 are <i>iris versicolor<i> and 50 are <i>iris virginica<i>
+ 
+ :heavy_check_mark: Line 66 on :file_folder: irisdata.py
+ 
+  ```  
+print(dataset.groupby('class').size())
+   ```
+ ##2.6 Dataset index: datatimeindex,n.of columns,type of data of each column, data types of the whole dataset, etc.
+
+ :heavy_check_mark: Line 69 on :file_folder: irisdata.py
+   
+   ```
+print(dataset.info()) 
+  ```
+  
+ ##2.7 Checking the last 20 rows of the dataset.
+  
+ :heavy_check_mark: Line 72 on :file_folder: irisdata.py
+  
+  ```
+print(dataset.tail(20)) 
+  ```
+
+##2.8 Pivot table: tool used to organize and summarize data between databases. It facilitates rotational, pivotal and/or structural changes[2].
+
+:heavy_check_mark: Line 75 on :file_folder: irisdata.py
+
  ```
- print(dataset.pivot_table(index='class', values=['sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))
+print(dataset.pivot_table(index='class', values=['sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))
  ```
  
-:arrow_right_hook: Detect missing values. True will indicate that the value contained within the cell is a missing value, False means that the cell contains a ‘normal’ value.In this case, you see that the data is quite complete: there are no missing values[3].
+##2.9 Data description. Summary statistics that exclude NaN values -  table that summarises the numeric information in the dataset, such as count, mean, standard deviation, minimum and maximum values and the quantiles of the data. It  was useful to gain a general sense of how the data is structured and about the data per se. 
 
-```
-print(pd.isnull(dataset)) #isnull - pandas
-```
+:heavy_check_mark: Line 78 on :file_folder: irisdata.py
 
-:arrow_right:Plots
+  ```
+print(dataset.describe())
+   ```
+:arrow_right:#3 Plots
 
 [[back to top](#project-instruction)]
 
-:arrow_right_hook: Histogram: 'A histogram is a plot that lets you discover, and show, the underlying frequency distribution (shape) of a set of continuous data. This allows the inspection of the data for its underlying distribution (e.g., normal distribution), outliers, skewness, etc'[4,5].
+:arrow_right_hook: ##3.1 Histograms: 'A histogram is a plot that lets you discover, and show, the underlying frequency distribution (shape) of a set of continuous data. This allows the inspection of the data for its underlying distribution (e.g., normal distribution), outliers, skewness, etc'[4,5].
+
+###3.1.1 Histogram of each attribute. It was created separate histogram for each attribute.
+
+:heavy_check_mark: Lines 86 - 112 on :file_folder: irisdata.py
  
   ```
   dataset.hist('sepal-length') #plot the histogram of sepal lenght
@@ -204,20 +253,47 @@ print(pd.isnull(dataset)) #isnull - pandas
   
   <img scr="https://image.ibb.co/hy1BUx/iris_hist_sepallenght.png"><img src="https://image.ibb.co/cq9y9x/iris_hist_sepalwidth.png">
   <img src="https://image.ibb.co/kjvuhH/iris_hist_petallenght.png"><img src="https://image.ibb.co/jPrBUx/iris_hist_petalwidth.png">
-  
-:arrow_right_hook: Plot on Dataframe/Series: The x axis represents the sample of 150 flowers and the y axis represents the lenght of sepal (in cm) of each flower. 
-  
+
+###3.1.2 Histogram of all attributes. It was created one single plot for all attributes.
+
+:heavy_check_mark: Lines 115 - 117 on :file_folder: irisdata.py
+
+```
+dataset.hist() #histogram plot of all 4 attributes
+plt.savefig('iris_hist.png')  # save plot
+plt.show() #show plot
+```
+
+:arrow_right_hook: ##3.2 Plot on Dataframe/Series: The x axis represents the sample of 150 flowers and the y axis represents the lenght of sepal (in cm) of each flower. 
+ 
+ ###3.2.1 Sepal lenght 
+ 
+:heavy_check_mark: Lines 122 - 127 on :file_folder: irisdata.py
+ 
   ```
-  sl_arr = dataset['sepal-length'].values
-  print(type(sl_arr)) #print the type of var
-  plt.plot(sl_arr) #plot array (matplotlib) sepal lenght
-  plt.savefig('iris_plotarray_sepallenght.png') #save plot
-  plt.show() # show the plot
+sl_arr = dataset['sepal-length'].values
+print(type(sl_arr)) #print the type of var
+  
+plt.plot(sl_arr) #plot array (matplotlib) sepal lenght
+plt.savefig('iris_plotarray_sepallenght.png') #save plot
+plt.show() # show the plot
   ```
   
   <img src="https://image.ibb.co/bMqibc/iris_plotarray_sepallenght.png">
-  
- :arrow_right_hook: Plot on Dataframe/Series: y axis as log-scale.A base-10 log scale is used for the Y axis of the bottom left graph, and the Y axis ranges from 0.1 to 1,000[6].
+ 
+ ###3.2.2 All attributes
+
+:heavy_check_mark: Lines 130 - 132 on :file_folder: irisdata.py
+
+  ```
+dataset.plot()  # plot dataframe (pandas)
+plt.savefig('iris_plotdataframe.png')  # save plot
+plt.show()  # show the plot
+  ```
+
+###3.2.3 All attributes y axis as log-scale.A base-10 log scale is used for the Y axis of the bottom left graph, and the Y axis ranges from 0.1 to 1,000[6].
+ 
+:heavy_check_mark: Lines 135 - 138 on :file_folder: irisdata.py
  
  ```
   dataset.plot()
@@ -228,21 +304,88 @@ print(pd.isnull(dataset)) #isnull - pandas
 
   <img src="https://image.ibb.co/gbEn2H/iris_log_verticalaxis.png">
   
-:arrow_right_hook: Multiple bar plot - Stacked Bar Graph: two or more sets of data are represented. It faciliates comparison between more than one phenomena. In this project, a stacked bar graph (one type of multiple bar plot) was plotted. It shows sub-groups that are displayed on the same bar[7]. So, each sample of flower is a bar and each bar contains 4 attributes of the flower (sepal lenght, sepal width, petal lenght and petal width).
+:arrow_right_hook: #4 Multiple bar plot - Stacked Bar Graph: two or more sets of data are represented. It faciliates comparison between more than one phenomena. In this project, a stacked bar graph (one type of multiple bar plot) was plotted. It shows sub-groups that are displayed on the same bar[7]. So, each sample of flower is a bar and each bar contains 4 attributes of the flower (sepal lenght, sepal width, petal lenght and petal width).
 
+:heavy_check_mark: Lines 141 - 145 on :file_folder: irisdata.py
+ 
+ ```
+dataset.plot(kind='barh', stacked=True)  # multiple bar plot
+plt.savefig('iris_plotdataframe.png') #save the plot
+plt.xlabel('in cm')  # x axis label
+plt.ylabel('Sample of 150 flowers')  # y axis label
+plt.show()  # show the plot
+ ```
+ 
   <img src="https://image.ibb.co/j3O0cH/Figure_1.png">
-  
-:arrow_right_hook:Scatter plot: A scatter plot is a graph in which a set of points plotted on a horizontal and vertical axes.As scatter plots show the extent of correlation between the values of the variables, they are an important tool in statistics. If there is no correlation between the variables the points will show randomly scattered on the coordinate plane. But, if there is a large correlation between the variables, the points concentrate near a straight line. Therefore, scatter plots are quite useful for data visualization as they illustrate a trend. Scatter plots shows not only the extent of correlation, but also the sense of the correlation. Neverthless, scatter plots not show the causation[8,9,10]. 
+
+:arrow_right_hook:#5 Box and Whisker Plot:
+
+:heavy_check_mark: Lines 148 - 151 on :file_folder: irisdata.py
+ 
+ ```
+color = dict(boxes='DarkGreen', whiskers='DarkOrange',medians='DarkBlue', caps='Gray')#colors
+dataset.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False, color=color)#plot type box
+plt.savefig('iris_box_and_whisker_plot.png') #save the plot
+plt.show() #show the plot
+ ```
+ 
+:arrow_right_hook:#6 Scatter plot: A scatter plot is a graph in which a set of points plotted on a horizontal and vertical axes.As scatter plots show the extent of correlation between the values of the variables, they are an important tool in statistics. If there is no correlation between the variables the points will show randomly scattered on the coordinate plane. But, if there is a large correlation between the variables, the points concentrate near a straight line. Therefore, scatter plots are quite useful for data visualization as they illustrate a trend. Scatter plots shows not only the extent of correlation, but also the sense of the correlation. Neverthless, scatter plots not show the causation[8,9,10]. 
   So, if the vertical (called y axis) variable increases and the horizontal (called x axis) variable also increases it means that there is a correlation (positive correlarion). The maximum positive correlation that is possible is +100% or +1 (all points in the plot lie along a straight line in a positive slope). In case the y axis variable decreases and the x axis increases or vice-versa it is a negative correlation. The maximum negative correlation that is possible is -100% or -1 (all the points in the plot lie along a straight line in a negative slope)[8,9,10].  
   
-  **Linear transformation techniques** - Principal Component Analysis (PCA) and Linear Discriminant Analysis (LDA)
-  
-:arrow_forward: PCA: identifies the combination of attributes (principal components, or directions in the feature space) that account for the most variance in the data. It is a linear dimensionality reduction that uses Singular Value Decomposition of the data of dataset to a lower dimensional space. In this case, samples of the two fisrt components were plotted. Usually, PCA is used to speed up a machine learning algorithm, helping to visualize your data. As Iris dataset is 4 dimensional the data must be projects into 2, that way it is easy to understand better the data and it is easier to plot. After the reduction from 4 to 2 dimension data usually there is no particular meaning designated to each main component[11]. 
+##6.1 Linear transformation techniques - Principal Component Analysis (PCA) and Linear Discriminant Analysis (LDA)
+
+:heavy_check_mark: Lines 155 -195 on :file_folder: irisdata.py
  
+ ```
+ dataset = datasets.load_iris() #load iris dataset via sklearn
+
+
+
+X = dataset.data
+y = dataset.target  # The target attribute is the integer index of the category
+tgn = dataset.target_names  # "label names"
+
+
+
+pca = PCA(n_components=2)  # Number of components to keep
+# Fit the model with X and apply the dimensionality reduction on X
+X_r = pca.fit(X).transform(X)
+
+
+
+lda = LinearDiscriminantAnalysis(
+    n_components=2)  # Number of components to keep
+# Fit the model with X and apply the dimensionality reduction on X
+X_r2 = lda.fit(X, y).transform(X)
+
+plt.figure()
+colors = ['magenta', 'green', 'blue']  # Colors chose to plot ("dots" color)
+lw = 2  # linewidth
+
+for color, i, tgn in zip(colors, [0, 1, 2], tgn):
+    plt.scatter(X_r[y == i, 0], X_r[y == i, 1], color=color, alpha=.8, lw=lw,
+                label=tgn)  # X,Y = data positions; Alpha = blending value, between 0 (transparent) and 1 (opaque); lw = the linewidth of the marker edges. Note: The default edgecolors is ‘face’. You may want to change this as well. If None, defaults to rcParams lines.linewidth.The linewidth of the marker edges. The default edgecolors is ‘face’.
+plt.legend(loc='best', shadow=False, scatterpoints=1)
+plt.title('Principal Component Analysis (PCA) of Iris dataset')  # plot's title
+plt.savefig('iris_PCA.png')  # save the fig named "iris-PCA.png"
+
+plt.figure()
+for color, i, tgn in zip(colors, [0, 1, 2], tgn):
+    plt.scatter(X_r2[y == i, 0], X_r2[y == i, 1], alpha=.8, color=color,
+                label=tgn)  # X,Y = data positions; Alpha = blending value, between 0 (transparent) and 1 (opaque); lw = the linewidth of the marker edges. Note: The default edgecolors is ‘face’. You may want to change this as well. If None, defaults to rcParams lines.linewidth.The linewidth of the marker edges.
+plt.legend(loc='best', shadow=False, scatterpoints=1)
+plt.title('Linear Discriminant Analysis (LDA) of Iris dataset')  # plot's title
+plt.savefig('iris_LDA.png')  # save the fig named "iris-LDA.png"
+
+plt.show()  # show PCA and LDA plots
+ ```
+
+###6.1.1 PCA: identifies the combination of attributes (principal components, or directions in the feature space) that account for the most variance in the data. It is a linear dimensionality reduction that uses Singular Value Decomposition of the data of dataset to a lower dimensional space. In this case, samples of the two fisrt components were plotted. Usually, PCA is used to speed up a machine learning algorithm, helping to visualize your data. As Iris dataset is 4 dimensional the data must be projects into 2, that way it is easy to understand better the data and it is easier to plot. After the reduction from 4 to 2 dimension data usually there is no particular meaning designated to each main component[11]. 
+
   <img src="https://image.ibb.co/kRLD9x/PCAIris.png">
   <img src="https://image.ibb.co/dvzfgn/PCAIrisline.png">
     
-:arrow_forward: LDA: indentifies attributes that account for the most variance between classes. LDA In particular, LDA, in contrast to PCA, is a supervised method, using known class labels[11,13].
+###6.1.2 LDA: indentifies attributes that account for the most variance between classes. LDA In particular, LDA, in contrast to PCA, is a supervised method, using known class labels[11,13].
  
  <img src="https://image.ibb.co/fqX4Gc/LDAIris.png">
  <img src="https://image.ibb.co/fCP2u7/LDAIrisline.png">
@@ -250,7 +393,16 @@ print(pd.isnull(dataset)) #isnull - pandas
  After plotting PCA and LDA it is possible to see relationship between their features of irises, especially <i>iris setosa <i> (in magenta) from those of the others. Another point that can be noticed is that there is some overlapping between <i>iris versicolor<i> (in green) and <i>iris virginica<i> (in blue). That way, one class clearly is linearly separable from the other two (<i>setosa<i> vs <i>versicolor/virginica<i>, but the last two are not totally linealy separable from each other (<i>versicolor<i> vs <i>virginica<i>) .
  
 :heavy_exclamation_mark:PCA vs LDA: Both LDA and PCA are used for dimensionality reduction, but PCA is described as an unsupervised method, because it does not take into account class labels and its object is to find the directions, known as principal components that maximize the variance in a dataset. While LDA is supervised method and computes the directions (“linear discriminants”) that will represent the axes that that maximize the separation between multiple classes[11,12,13].
-  
+
+:arrow_right_hook:#7 Variance ratio:
+
+:heavy_check_mark: Line 199 on :file_folder: irisdata.py
+
+ ```
+# The amount of variance explained by each of the selected components
+print(pca.explained_variance_ratio_)
+  ```
+
 [[back to top](#project-instruction)]
 
 #### References (Part 2)
@@ -272,6 +424,8 @@ print(pd.isnull(dataset)) #isnull - pandas
 
 LEMBRETE PARA MIM MESMA
 - ajeitar as images
-- ajeitar as legendas
+- verificar se todos os graficos foram colocados no arquivo
+- tirar screenshot dos resultados e colocar no arquivo
+- descrever o variance ratio, box and whisker plot
 - explicar os resultados dos plots
 
