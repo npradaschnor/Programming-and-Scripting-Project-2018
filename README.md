@@ -127,7 +127,9 @@ After so many attempts to get the min and max values of each column I've started
   ```
   print(plt.style.available)
   ```
-    
+  
+ <img src="https://image.ibb.co/kCGz1n/irisdata_styles_available_matplot.png" alt="irisdata_styles_available_matplot" border="0">
+ 
  Then, I ran simple descriptive statistics on iris data set. That way, I could effectively appproach the iris data set.
       
 :arrow_right: # 1 Open the Iris dataset and each column got a 'header'
@@ -149,6 +151,9 @@ To identify the rows that contain missing values. True will indicate that the va
    ```
 print(pandas.isnull(dataset))
    ```
+
+<img src="https://image.ibb.co/hemGgn/irisdata_isnull.png" alt="irisdata_isnull" border="0">
+   
  ##2.2 Type of dataset
   
  :heavy_check_mark: Line 57 on :file_folder: irisdata.py
@@ -156,7 +161,9 @@ print(pandas.isnull(dataset))
   ```
 print(type(dataset)) 
   ```
-  
+
+<img src="https://image.ibb.co/mNM4Z7/irisdata_data_type.png" alt="irisdata_data_type" border="0">
+
  ##2.3 Number of rows and columns
   
  :heavy_check_mark: Line 60 on :file_folder: irisdata.py
@@ -165,6 +172,8 @@ print(type(dataset))
 print(dataset.shape)
  ``` 
  
+ <img src="https://image.ibb.co/eR9rE7/irisdata_number_of_rows_and_columns.png" alt="irisdata_number_of_rows_and_columns" border="0">
+ 
  ##2.4 Name of the columns
  
  :heavy_check_mark: Line 63 on :file_folder: irisdata.py
@@ -172,7 +181,9 @@ print(dataset.shape)
   ```
 print(dataset.columns)
   ```
-  
+
+<img src="https://image.ibb.co/gNWou7/irisdata_index_header.png" alt="irisdata_index_header" border="0">
+
  ##2.5 Class distribution. There are 150 samples of flowers: 50 are <i>iris setosa<i>, 50 are <i>iris versicolor<i> and 50 are <i>iris virginica<i>
  
  :heavy_check_mark: Line 66 on :file_folder: irisdata.py
@@ -180,6 +191,9 @@ print(dataset.columns)
   ```  
 print(dataset.groupby('class').size())
    ```
+  
+<img src="https://image.ibb.co/ngabgn/irisdata_class.png" alt="irisdata_class" border="0">
+   
  ##2.6 Dataset index: datatimeindex,n.of columns,type of data of each column, data types of the whole dataset, etc.
 
  :heavy_check_mark: Line 69 on :file_folder: irisdata.py
@@ -187,6 +201,8 @@ print(dataset.groupby('class').size())
    ```
 print(dataset.info()) 
   ```
+  
+ <img src="https://image.ibb.co/crFv7S/irisdata_datetime.png" alt="irisdata_datetime" border="0">
   
  ##2.7 Checking the last 20 rows of the dataset.
   
@@ -196,6 +212,8 @@ print(dataset.info())
 print(dataset.tail(20)) 
   ```
 
+<img src="https://image.ibb.co/k0XsnS/irisdata_20_rows_tail.png" alt="irisdata_20_rows_tail" border="0">
+
 ##2.8 Pivot table: tool used to organize and summarize data between databases. It facilitates rotational, pivotal and/or structural changes[2].
 
 :heavy_check_mark: Line 75 on :file_folder: irisdata.py
@@ -204,6 +222,8 @@ print(dataset.tail(20))
 print(dataset.pivot_table(index='class', values=['sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))
  ```
  
+ <img src="https://image.ibb.co/k0XsnS/irisdata_20_rows_tail.png" alt="irisdata_20_rows_tail" border="0">
+ 
 ##2.9 Data description. Summary statistics that exclude NaN values -  table that summarises the numeric information in the dataset, such as count, mean, standard deviation, minimum and maximum values and the quantiles of the data. It  was useful to gain a general sense of how the data is structured and about the data per se. 
 
 :heavy_check_mark: Line 78 on :file_folder: irisdata.py
@@ -211,6 +231,9 @@ print(dataset.pivot_table(index='class', values=['sepal-length', 'sepal-width', 
   ```
 print(dataset.describe())
    ```
+   
+<img src="https://image.ibb.co/ccvj1n/irisdata_describe.png" alt="irisdata_describe" border="0">
+   
 :arrow_right:#3 Plots
 
 [[back to top](#project-instruction)]
