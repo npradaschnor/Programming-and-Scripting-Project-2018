@@ -263,6 +263,7 @@ dataset.hist() #histogram plot of all 4 attributes
 plt.savefig('iris_hist.png')  # save plot
 plt.show() #show plot
 ```
+<img src="https://image.ibb.co/e54PZ7/iris_hist_allattributes.png">
 
 :arrow_right_hook: ##3.2 Plot on Dataframe/Series: The x axis represents the sample of 150 flowers and the y axis represents the lenght of sepal (in cm) of each flower. 
  
