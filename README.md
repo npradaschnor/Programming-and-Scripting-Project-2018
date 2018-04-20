@@ -251,8 +251,10 @@ print(dataset.describe())
   plt.show()  # show the histogram
   ```
   
-  <img scr="https://image.ibb.co/hy1BUx/iris_hist_sepallenght.png"><img src="https://image.ibb.co/cq9y9x/iris_hist_sepalwidth.png">
-  <img src="https://image.ibb.co/kjvuhH/iris_hist_petallenght.png"><img src="https://image.ibb.co/jPrBUx/iris_hist_petalwidth.png">
+  <img src="https://image.ibb.co/hy1BUx/iris_hist_sepallenght.png" alt="iris hist sepallenght" border="0" />
+  <img src="https://image.ibb.co/cq9y9x/iris_hist_sepalwidth.png">
+    <img src="https://image.ibb.co/kjvuhH/iris_hist_petallenght.png">
+    <img src="https://image.ibb.co/jPrBUx/iris_hist_petalwidth.png">
 
 ###3.1.2 Histogram of all attributes. It was created one single plot for all attributes.
 
