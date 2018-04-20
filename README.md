@@ -293,6 +293,8 @@ dataset.plot()  # plot dataframe (pandas)
 plt.savefig('iris_plotdataframe.png')  # save plot
 plt.show()  # show the plot
   ```
+  
+<img src="https://image.ibb.co/m9EzZ7/allatributes.png" alt="allatributes" border="0" />
 
 ###3.2.3 All attributes y axis as log-scale.A base-10 log scale is used for the Y axis of the bottom left graph, and the Y axis ranges from 0.1 to 1,000[6].
  
@@ -319,7 +321,7 @@ plt.ylabel('Sample of 150 flowers')  # y axis label
 plt.show()  # show the plot
  ```
  
-  <img src="https://image.ibb.co/j3O0cH/Figure_1.png">
+<img src="https://image.ibb.co/j3O0cH/Figure_1.png">
 
 :arrow_right_hook:#5 Box and Whisker Plot:
 
@@ -331,6 +333,8 @@ dataset.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=Fals
 plt.savefig('iris_box_and_whisker_plot.png') #save the plot
 plt.show() #show the plot
  ```
+
+<img src="https://image.ibb.co/c8av7S/iris_box_and_whisker_plot.png" alt="iris_box_and_whisker_plot" border="0">
  
 :arrow_right_hook:#6 Scatter plot: A scatter plot is a graph in which a set of points plotted on a horizontal and vertical axes.As scatter plots show the extent of correlation between the values of the variables, they are an important tool in statistics. If there is no correlation between the variables the points will show randomly scattered on the coordinate plane. But, if there is a large correlation between the variables, the points concentrate near a straight line. Therefore, scatter plots are quite useful for data visualization as they illustrate a trend. Scatter plots shows not only the extent of correlation, but also the sense of the correlation. Neverthless, scatter plots not show the causation[8,9,10]. 
   So, if the vertical (called y axis) variable increases and the horizontal (called x axis) variable also increases it means that there is a correlation (positive correlarion). The maximum positive correlation that is possible is +100% or +1 (all points in the plot lie along a straight line in a positive slope). In case the y axis variable decreases and the x axis increases or vice-versa it is a negative correlation. The maximum negative correlation that is possible is -100% or -1 (all the points in the plot lie along a straight line in a negative slope)[8,9,10].  
