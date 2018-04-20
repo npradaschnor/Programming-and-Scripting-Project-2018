@@ -435,4 +435,3 @@ LEMBRETE PARA MIM MESMA
 - tirar screenshot dos resultados e colocar no arquivo
 - descrever o variance ratio, box and whisker plot
 - explicar os resultados dos plots
-
