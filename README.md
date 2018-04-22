@@ -66,10 +66,11 @@ Before starting the project some programs, files and libraries must be downloade
  ```
  
 About some of the libraries imported[1]: 
-_Pandas_ - for data-frame management package that allows for some useful function on the dataset.
-_Numpy_ - package useful for lineal algebra.
-_Matplotlib_ - good package to contruct visualizations.
-_Sklearn_ - package important to do machine learning in python.
+_Pandas_ - for data-frame management package that allows for some useful function on the dataset.<br>
+_Numpy_ - package useful for lineal algebra.<br>
+_Matplotlib_ - good package to contruct visualizations.<br>
+_Seaborn_ - it is based on matplotlib that provides a high-level interface for drawing attractive statistical graphics.<br>
+_Sklearn_ - package important to do machine learning in python.<br>
 
 I've tried to convert the data from iris data set from strings to float numbers (def function make float) but it didn't work (the last columns couldn't be converted to float or number). 
 
@@ -135,18 +136,32 @@ After so many attempts to get the min and max values of each column I've started
 :arrow_right: # 1 Open the Iris dataset and each column got a 'header'
   
  :heavy_check_mark: Lines 36 - 40 on :file_folder: irisdata.py
+ 
   ```
 with open ('data/iris.csv') as f: #open iris data set
    names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class'] 
    dataset = pandas.read_csv(f, names=names)</b>
    ```
-  
+##1.1 Other ways of opening Iris Dataset
+
+:heavy_check_mark: Lines 43 - 49 on :file_folder: irisdata.py
+ 
+  ```
+dataset1 = datasets.load_iris() #via sklearn
+
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+names1 = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+dataset2 = pandas.read_csv(url, names=names) #via Panda using URL
+
+dataset3 = sns.load_dataset("iris") #via seaborn
+  ```
+
 :arrow_right: #2 Information about the dataset: type, number of rows and columns, name of the columns, pandas index, datatimeindex(number of columns, type of data in each column, ...). Moreover, to get a general idea about the dataset and to take a closer look at the data itself the function  (dataset.tail(20)) was used to check out the last 20 rows. That way, I got a general idea about the data set.
 
 ##2.1 Checking missing values
 To identify the rows that contain missing values. True will indicate that the value contained within the cell is a missing value, False means that the cell contains a ‘normal’ value. In this case, there are no missing values.
 
-:heavy_check_mark: Line 54 on :file_folder: irisdata.py
+:heavy_check_mark: Line 56 on :file_folder: irisdata.py
  
    ```
 print(pandas.isnull(dataset))
@@ -156,7 +171,7 @@ print(pandas.isnull(dataset))
    
  ##2.2 Type of dataset
   
- :heavy_check_mark: Line 57 on :file_folder: irisdata.py
+ :heavy_check_mark: Line 59 on :file_folder: irisdata.py
   
   ```
 print(type(dataset)) 
@@ -166,7 +181,7 @@ print(type(dataset))
 
  ##2.3 Number of rows and columns
   
- :heavy_check_mark: Line 60 on :file_folder: irisdata.py
+ :heavy_check_mark: Line 62 on :file_folder: irisdata.py
   
   ```
 print(dataset.shape)
@@ -176,7 +191,7 @@ print(dataset.shape)
  
  ##2.4 Name of the columns
  
- :heavy_check_mark: Line 63 on :file_folder: irisdata.py
+ :heavy_check_mark: Line 65 on :file_folder: irisdata.py
  
   ```
 print(dataset.columns)
@@ -186,7 +201,7 @@ print(dataset.columns)
 
  ##2.5 Class distribution. There are 150 samples of flowers: 50 are <i>iris setosa<i>, 50 are <i>iris versicolor<i> and 50 are <i>iris virginica<i>
  
- :heavy_check_mark: Line 66 on :file_folder: irisdata.py
+ :heavy_check_mark: Line 68 on :file_folder: irisdata.py
  
   ```  
 print(dataset.groupby('class').size())
@@ -196,7 +211,7 @@ print(dataset.groupby('class').size())
    
  ##2.6 Dataset index: datatimeindex,n.of columns,type of data of each column, data types of the whole dataset, etc.
 
- :heavy_check_mark: Line 69 on :file_folder: irisdata.py
+ :heavy_check_mark: Line 71 on :file_folder: irisdata.py
    
    ```
 print(dataset.info()) 
@@ -206,7 +221,7 @@ print(dataset.info())
   
  ##2.7 Checking the last 20 rows of the dataset.
   
- :heavy_check_mark: Line 72 on :file_folder: irisdata.py
+ :heavy_check_mark: Line 74 on :file_folder: irisdata.py
   
   ```
 print(dataset.tail(20)) 
@@ -216,7 +231,7 @@ print(dataset.tail(20))
 
 ##2.8 Pivot table: tool used to organize and summarize data between databases. It facilitates rotational, pivotal and/or structural changes[2].
 
-:heavy_check_mark: Line 75 on :file_folder: irisdata.py
+:heavy_check_mark: Line 77 on :file_folder: irisdata.py
 
  ```
 print(dataset.pivot_table(index='class', values=['sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))
@@ -226,7 +241,7 @@ print(dataset.pivot_table(index='class', values=['sepal-length', 'sepal-width', 
  
 ##2.9 Data description. Summary statistics that exclude NaN values -  table that summarises the numeric information in the dataset, such as count, mean, standard deviation, minimum and maximum values and the quantiles of the data. It  was useful to gain a general sense of how the data is structured and about the data per se. 
 
-:heavy_check_mark: Line 78 on :file_folder: irisdata.py
+:heavy_check_mark: Line 80 on :file_folder: irisdata.py
 
   ```
 print(dataset.describe())
@@ -242,7 +257,7 @@ print(dataset.describe())
 
 ###3.1.1 Histogram of each attribute. It was created separate histogram for each attribute.
 
-:heavy_check_mark: Lines 86 - 112 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 88 - 114 on :file_folder: irisdata.py
  
   ```
   dataset.hist('sepal-length') #plot the histogram of sepal lenght
@@ -281,10 +296,11 @@ print(dataset.describe())
 
 ###3.1.2 Histogram of all attributes. It was created one single plot for all attributes.
 
-:heavy_check_mark: Lines 115 - 117 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 117 - 120 on :file_folder: irisdata.py
 
 ```
 dataset.hist() #histogram plot of all 4 attributes
+plt.title('Histogram of Iris dataset')
 plt.savefig('iris_hist.png')  # save plot
 plt.show() #show plot
 ```
@@ -294,94 +310,106 @@ plt.show() #show plot
  
  ###3.2.1 Sepal lenght 
  
-:heavy_check_mark: Lines 122 - 127 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 125 - 131 on :file_folder: irisdata.py
  
   ```
 sl_arr = dataset['sepal-length'].values
 print(type(sl_arr)) #print the type of var
   
 plt.plot(sl_arr) #plot array (matplotlib) sepal lenght
+plt.title ('Sepal lenght')
 plt.savefig('iris_plotarray_sepallenght.png') #save plot
 plt.show() # show the plot
   ```
   
-  <img src="https://image.ibb.co/bMqibc/iris_plotarray_sepallenght.png">
+<img src="https://image.ibb.co/c1Kpoc/sepallenghtdataframeplotpng.png" alt="sepallenghtdataframeplotpng" border="0">
  
  ###3.2.2 All attributes
 
-:heavy_check_mark: Lines 130 - 132 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 134 - 137 on :file_folder: irisdata.py
 
   ```
 dataset.plot()  # plot dataframe (pandas)
+plt.title('Iris dataset plot on Dataframe')
 plt.savefig('iris_plotdataframe.png')  # save plot
 plt.show()  # show the plot
   ```
   
-<img src="https://image.ibb.co/m9EzZ7/allatributes.png" alt="allatributes" border="0" />
+<img src="https://image.ibb.co/bSpN8c/irisdatasetplotondataframe.png" alt="irisdatasetplotondataframe" border="0">
 
 ###3.2.3 All attributes y axis as log-scale.A base-10 log scale is used for the Y axis of the bottom left graph, and the Y axis ranges from 0.1 to 1,000[6].
  
-:heavy_check_mark: Lines 135 - 138 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 140 - 14 on :file_folder: irisdata.py
  
  ```
   dataset.plot()
   plt.yscale('log') #fixing scales - log scale on vertical axis
+  plt.title('Iris dataset log scale on vertical axis')
   plt.savefig('iris.log_verticalaxis.png') #save plot
   plt.show() # show the plot
 ```
 
-  <img src="https://image.ibb.co/gbEn2H/iris_log_verticalaxis.png">
+<img src="https://image.ibb.co/dpwATc/irisdatasetlogscaleonverticalaxis.png" alt="irisdatasetlogscaleonverticalaxis" border="0">
   
 :arrow_right_hook: #4 Multiple bar plot - Stacked Bar Graph: two or more sets of data are represented. It faciliates comparison between more than one phenomena. In this project, a stacked bar graph (one type of multiple bar plot) was plotted. It shows sub-groups that are displayed on the same bar[7]. So, each sample of flower is a bar and each bar contains 4 attributes of the flower (sepal lenght, sepal width, petal lenght and petal width).
 
-:heavy_check_mark: Lines 141 - 145 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 147 - 152 on :file_folder: irisdata.py
  
  ```
 dataset.plot(kind='barh', stacked=True)  # multiple bar plot
 plt.savefig('iris_plotdataframe.png') #save the plot
 plt.xlabel('in cm')  # x axis label
 plt.ylabel('Sample of 150 flowers')  # y axis label
+plt.title('Stacked bar graph of Iris dataset')
 plt.show()  # show the plot
  ```
  
 <img src="https://image.ibb.co/j3O0cH/Figure_1.png">
 
-:arrow_right_hook:#5 Box and Whisker Plot:
+:arrow_right_hook:#5 Box and Whisker Plot: also called a box plot the bottom and the top of the box are the first and the third quartiles, while the band inside the box shows the median (second quartile). Data not included between the whiskers are plotted as outlier (small circle). That way, the box plot displays the minimum, first quartile, median, third quartile, and maximum[14,15].
 
-:heavy_check_mark: Lines 148 - 151 on :file_folder: irisdata.py
+<img src="https://image.ibb.co/mGjQdc/efbb442e599e8ed46c183917f8ffbd90cfc82cab.gif" alt="efbb442e599e8ed46c183917f8ffbd90cfc82cab" border="0"> From https://goo.gl/u3g4EN
+
+:heavy_check_mark: Lines 155 - 159 on :file_folder: irisdata.py
  
  ```
 color = dict(boxes='DarkGreen', whiskers='DarkOrange',medians='DarkBlue', caps='Gray')#colors
 dataset.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False, color=color)#plot type box
+plt.title('Iris dataset Box Plot')
 plt.savefig('iris_box_and_whisker_plot.png') #save the plot
 plt.show() #show the plot
  ```
 
 <img src="https://image.ibb.co/c8av7S/iris_box_and_whisker_plot.png" alt="iris_box_and_whisker_plot" border="0">
- 
+
+:heavy_check_mark: Lines 161 - 164 on :file_folder: irisdata.py
+
+ ```
+iris = sns.load_dataset("iris") #load iris dataset via seaborn
+ax = sns.boxplot(data=iris, orient="h", palette="coolwarm") #boxplot (seaborn)
+fig=ax.get_figure()
+fig.savefig("iris_box_plot.png") #save plot
+ ```
+
+<img src="https://image.ibb.co/njQvTc/iris_boxplot1.png" alt="iris_boxplot1" border="0">
+
 :arrow_right_hook:#6 Scatter plot: A scatter plot is a graph in which a set of points plotted on a horizontal and vertical axes.As scatter plots show the extent of correlation between the values of the variables, they are an important tool in statistics. If there is no correlation between the variables the points will show randomly scattered on the coordinate plane. But, if there is a large correlation between the variables, the points concentrate near a straight line. Therefore, scatter plots are quite useful for data visualization as they illustrate a trend. Scatter plots shows not only the extent of correlation, but also the sense of the correlation. Neverthless, scatter plots not show the causation[8,9,10]. 
   So, if the vertical (called y axis) variable increases and the horizontal (called x axis) variable also increases it means that there is a correlation (positive correlarion). The maximum positive correlation that is possible is +100% or +1 (all points in the plot lie along a straight line in a positive slope). In case the y axis variable decreases and the x axis increases or vice-versa it is a negative correlation. The maximum negative correlation that is possible is -100% or -1 (all the points in the plot lie along a straight line in a negative slope)[8,9,10].  
   
 ##6.1 Linear transformation techniques - Principal Component Analysis (PCA) and Linear Discriminant Analysis (LDA)
 
-:heavy_check_mark: Lines 155 -195 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 168 -208 on :file_folder: irisdata.py
  
  ```
  dataset = datasets.load_iris() #load iris dataset via sklearn
-
-
 
 X = dataset.data
 y = dataset.target  # The target attribute is the integer index of the category
 tgn = dataset.target_names  # "label names"
 
-
-
 pca = PCA(n_components=2)  # Number of components to keep
 # Fit the model with X and apply the dimensionality reduction on X
 X_r = pca.fit(X).transform(X)
-
-
 
 lda = LinearDiscriminantAnalysis(
     n_components=2)  # Number of components to keep
@@ -413,25 +441,14 @@ plt.show()  # show PCA and LDA plots
 ###6.1.1 PCA: identifies the combination of attributes (principal components, or directions in the feature space) that account for the most variance in the data. It is a linear dimensionality reduction that uses Singular Value Decomposition of the data of dataset to a lower dimensional space. In this case, samples of the two fisrt components were plotted. Usually, PCA is used to speed up a machine learning algorithm, helping to visualize your data. As Iris dataset is 4 dimensional the data must be projects into 2, that way it is easy to understand better the data and it is easier to plot. After the reduction from 4 to 2 dimension data usually there is no particular meaning designated to each main component[11]. 
 
   <img src="https://image.ibb.co/kRLD9x/PCAIris.png">
-  <img src="https://image.ibb.co/dvzfgn/PCAIrisline.png">
-    
+      
 ###6.1.2 LDA: indentifies attributes that account for the most variance between classes. LDA In particular, LDA, in contrast to PCA, is a supervised method, using known class labels[11,13].
  
  <img src="https://image.ibb.co/fqX4Gc/LDAIris.png">
- <img src="https://image.ibb.co/fCP2u7/LDAIrisline.png">
   
  After plotting PCA and LDA it is possible to see relationship between their features of irises, especially <i>iris setosa <i> (in magenta) from those of the others. Another point that can be noticed is that there is some overlapping between <i>iris versicolor<i> (in green) and <i>iris virginica<i> (in blue). That way, one class clearly is linearly separable from the other two (<i>setosa<i> vs <i>versicolor/virginica<i>, but the last two are not totally linealy separable from each other (<i>versicolor<i> vs <i>virginica<i>) .
  
 :heavy_exclamation_mark:PCA vs LDA: Both LDA and PCA are used for dimensionality reduction, but PCA is described as an unsupervised method, because it does not take into account class labels and its object is to find the directions, known as principal components that maximize the variance in a dataset. While LDA is supervised method and computes the directions (“linear discriminants”) that will represent the axes that that maximize the separation between multiple classes[11,12,13].
-
-:arrow_right_hook:#7 Variance ratio:
-
-:heavy_check_mark: Line 199 on :file_folder: irisdata.py
-
- ```
-# The amount of variance explained by each of the selected components
-print(pca.explained_variance_ratio_)
-  ```
 
 [[back to top](#project-instruction)]
 
@@ -449,12 +466,12 @@ print(pca.explained_variance_ratio_)
 [11]https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60<br>
 [12]http://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_vs_lda.html<br>
 [13]http://sebastianraschka.com/Articles/2014_python_lda.html<br>
+[14]https://en.wikipedia.org/wiki/Box_plot<br>
+[15]https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/box-whisker-plots/a/box-plot-review<br>
 
 [[back to top](#project-instruction)]
 
 LEMBRETE PARA MIM MESMA
-- ajeitar as images
+- ajeitar as images (rever as imagens, pois agora tem titulo....ver as que nao tinha e agora tem e trocar
 - verificar se todos os graficos foram colocados no arquivo
-- tirar screenshot dos resultados e colocar no arquivo
-- descrever o variance ratio, box and whisker plot
 - explicar os resultados dos plots
