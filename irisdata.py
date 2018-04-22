@@ -46,6 +46,8 @@ url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 names1 = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset2 = pandas.read_csv(url, names=names) #via Panda using URL
 
+dataset3 = sns.load_dataset("iris") #via seaborn
+
 # 2 CHECKING THE IRIS DATASET - BASIC INFO BEFORE ANALYSING IT
 
 ## 2.1 CHECKING MISSING VALUES
@@ -123,17 +125,20 @@ sl_arr = dataset['sepal-length'].values
 print(type(sl_arr))  # print the type of var
   
 plt.plot(sl_arr)  # plot array (matplotlib) sepal lenght
+plt.title ('Sepal lenght')
 plt.savefig('iris_plotarray_sepallenght.png')  # save plot
 plt.show()  # show the plot
 
 # 3.2.2 ALL 4 ATTRIBUTES
 dataset.plot()  # plot dataframe (pandas)
+plt.title('Iris dataset plot on Dataframe')
 plt.savefig('iris_plotdataframe.png')  # save plot
 plt.show()  # show the plot
 
 # 3.2.3 ALL ATTRIBUTES Y AXIS ON LOG SCALE
 dataset.plot()
 plt.yscale('log')  # fixing scales - log scale on vertical axis
+plt.title('Iris dataset log scale on vertical axis')
 plt.savefig('iris.log_verticalaxis.png')  # save plot
 plt.show()  # show the plot
 
@@ -142,6 +147,7 @@ dataset.plot(kind='barh', stacked=True)  # multiple bar plot
 plt.savefig('iris_plotdataframe.png') #save the plot
 plt.xlabel('in cm')  # x axis label
 plt.ylabel('Sample of 150 flowers')  # y axis label
+plt.title('Stacked bar graph of Iris dataset')
 plt.show()  # show the plot
 
 # 5 BOX AND WHISKER PLOT
@@ -149,6 +155,11 @@ color = dict(boxes='DarkGreen', whiskers='DarkOrange',medians='DarkBlue', caps='
 dataset.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False, color=color)#plot type box
 plt.savefig('iris_box_and_whisker_plot.png') #save the plot
 plt.show() #show the plot
+
+iris = sns.load_dataset("iris") #load iris dataset via seaborn
+ax = sns.boxplot(data=iris, orient="h", palette="coolwarm") #box plot (seaborn)
+fig=ax.get_figure()
+fig.savefig("iris_box_plot.png") #save plot
 
 ## 6 SCATTER PLOTS
 
@@ -193,7 +204,3 @@ plt.title('Linear Discriminant Analysis (LDA) of Iris dataset')  # plot's title
 plt.savefig('iris_LDA.png')  # save the fig named "iris-LDA.png"
 
 plt.show()  # show PCA and LDA plots
-
-# 7 VARIANCE RATIO OF THE TWO SELECTED COMPONENTS
-# The amount of variance explained by each of the selected components
-print(pca.explained_variance_ratio_)
