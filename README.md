@@ -296,11 +296,10 @@ print(dataset.describe())
 
 ###3.1.2 Histogram of all attributes. It was created one single plot for all attributes.
 
-:heavy_check_mark: Lines 117 - 120 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 117 - 119 on :file_folder: irisdata.py
 
 ```
 dataset.hist() #histogram plot of all 4 attributes
-plt.title('Histogram of Iris dataset')
 plt.savefig('iris_hist.png')  # save plot
 plt.show() #show plot
 ```
@@ -310,7 +309,7 @@ plt.show() #show plot
  
  ###3.2.1 Sepal lenght 
  
-:heavy_check_mark: Lines 125 - 131 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 124 - 130 on :file_folder: irisdata.py
  
   ```
 sl_arr = dataset['sepal-length'].values
@@ -326,7 +325,7 @@ plt.show() # show the plot
  
  ###3.2.2 All attributes
 
-:heavy_check_mark: Lines 134 - 137 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 133 - 136 on :file_folder: irisdata.py
 
   ```
 dataset.plot()  # plot dataframe (pandas)
@@ -339,7 +338,7 @@ plt.show()  # show the plot
 
 ###3.2.3 All attributes y axis as log-scale.A base-10 log scale is used for the Y axis of the bottom left graph, and the Y axis ranges from 0.1 to 1,000[6].
  
-:heavy_check_mark: Lines 140 - 14 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 139 - 143 on :file_folder: irisdata.py
  
  ```
   dataset.plot()
@@ -353,7 +352,7 @@ plt.show()  # show the plot
   
 :arrow_right_hook: #4 Multiple bar plot - Stacked Bar Graph: two or more sets of data are represented. It faciliates comparison between more than one phenomena. In this project, a stacked bar graph (one type of multiple bar plot) was plotted. It shows sub-groups that are displayed on the same bar[7]. So, each sample of flower is a bar and each bar contains 4 attributes of the flower (sepal lenght, sepal width, petal lenght and petal width).
 
-:heavy_check_mark: Lines 147 - 152 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 146 - 151 on :file_folder: irisdata.py
  
  ```
 dataset.plot(kind='barh', stacked=True)  # multiple bar plot
@@ -370,19 +369,18 @@ plt.show()  # show the plot
 
 <img src="https://image.ibb.co/mGjQdc/efbb442e599e8ed46c183917f8ffbd90cfc82cab.gif" alt="efbb442e599e8ed46c183917f8ffbd90cfc82cab" border="0"> From https://goo.gl/u3g4EN
 
-:heavy_check_mark: Lines 155 - 159 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 154 - 157 on :file_folder: irisdata.py
  
  ```
 color = dict(boxes='DarkGreen', whiskers='DarkOrange',medians='DarkBlue', caps='Gray')#colors
 dataset.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False, color=color)#plot type box
-plt.title('Iris dataset Box Plot')
 plt.savefig('iris_box_and_whisker_plot.png') #save the plot
 plt.show() #show the plot
  ```
 
 <img src="https://image.ibb.co/c8av7S/iris_box_and_whisker_plot.png" alt="iris_box_and_whisker_plot" border="0">
 
-:heavy_check_mark: Lines 161 - 164 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 159 - 162 on :file_folder: irisdata.py
 
  ```
 iris = sns.load_dataset("iris") #load iris dataset via seaborn
@@ -398,7 +396,7 @@ fig.savefig("iris_box_plot.png") #save plot
   
 ##6.1 Linear transformation techniques - Principal Component Analysis (PCA) and Linear Discriminant Analysis (LDA)
 
-:heavy_check_mark: Lines 168 -208 on :file_folder: irisdata.py
+:heavy_check_mark: Lines 166 -206 on :file_folder: irisdata.py
  
  ```
  dataset = datasets.load_iris() #load iris dataset via sklearn
@@ -472,6 +470,5 @@ plt.show()  # show PCA and LDA plots
 [[back to top](#project-instruction)]
 
 LEMBRETE PARA MIM MESMA
-- ajeitar as images (rever as imagens, pois agora tem titulo....ver as que nao tinha e agora tem e trocar
 - verificar se todos os graficos foram colocados no arquivo
 - explicar os resultados dos plots
