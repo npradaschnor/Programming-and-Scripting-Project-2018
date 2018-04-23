@@ -1,10 +1,9 @@
 <h1 align="center"> Project 2018 - Iris Dataset (python)</h1><br>
 
 <img src="https://image.ibb.co/g96qDc/gmitlogo.jpg" alt="gmitlogo" border="0" align="center"><br>
-<h2 align="center"> Computer Science - Data Analytics course</h2>
-<h2 align="center">Programming and Scripting module</h2><br>
+<p align="center"><h3> Computer Science - Data Analytics course</h2> | <h3>Programming and Scripting module</h2></p><br>
 
-## Noa P Prada Schnor  G00364704 <br><br><br>
+<h3 align="center"><i>Noa P Prada Schnor  G00364704<i> </h3><br><br><br>
 
 ###### Project instruction
 <p align="justify">The project entails the student researching the data set, and then writing documentation and code in the Python programming language based on that research. An online search for information on the data set will convince the student that many people have investigated and written about it previously, and many of those are not experienced programmers. The student is expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed.</p> 
