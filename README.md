@@ -24,7 +24,7 @@
  
 <p align="justify">  Iris dataset is a multivariate dataset of three classes of Irises and it was collected by the American botanist Edgar Anderson (1935) and introduced by the British statistician and geneticist Ronald Fisher in his article published in 1936 <i>"The Use of Multiple Measurements in Taxonomic Problems"<i> introducing linear-discriminant-function technique. Fisher's paper is referenced frequently to this day for being such a classic in the field. The Iris data set is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc [4, 6].The iris dataset is available online from University California Irvine's (UCI) machine-learning repository of datasets (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) [1,2,3,5,6]. </p>
  
-<img src="https://image.ibb.co/cbYW47/anderson_edgar_pdf.png" style="width: 700px; height:600px;" "align="center"> <br>
+<img src="https://image.ibb.co/cbYW47/anderson_edgar_pdf.png" style="width: 700px; height:600px;" align="center"> <br>
 <img src="https://image.ibb.co/jUYu4x/R_A_Fischer.jpg" style="width: 800px; height:700px;" align="center"><br>
 <p align="center">Edgar Anderson and Ronald Fisher</p>
 
