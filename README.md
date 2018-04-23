@@ -1,4 +1,10 @@
-# Programming-and-Scripting-Project-2018
+<h1 align="center"> Project 2018 - Iris Dataset (python)</h1><br>
+
+<img src="https://image.ibb.co/g96qDc/gmitlogo.jpg" alt="gmitlogo" border="0" align="center"><br>
+<h2 align="center"> Computer Science - Data Analytics course</h2>
+<h2 align="center">Programming and Scripting module</h2><br>
+
+## Noa P Prada Schnor  G00364704 <br><br><br>
 
 ###### Project instruction
 <p align="justify">The project entails the student researching the data set, and then writing documentation and code in the Python programming language based on that research. An online search for information on the data set will convince the student that many people have investigated and written about it previously, and many of those are not experienced programmers. The student is expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed.</p> 
@@ -11,16 +17,16 @@
 - [x]  Write a summary of your investigations
 - [x] Include supporting tables and graphics as you deem necessary
 
-#### Python script is on :file_folder: "irisdata.py"
+#### Python script is on :file_folder: <a href="https://github.com/npradaschnor/Programming-and-Scripting-Project-2018/blob/master/irisdata.py"> "irisdata.py" </a>
 
 ## Part 1: About Iris Dataset
  [[back to top](#project-instruction)]
  
 <p align="justify">  Iris dataset is a multivariate dataset of three classes of Irises and it was collected by the American botanist Edgar Anderson (1935) and introduced by the British statistician and geneticist Ronald Fisher in his article published in 1936 <i>"The Use of Multiple Measurements in Taxonomic Problems"<i> introducing linear-discriminant-function technique. Fisher's paper is referenced frequently to this day for being such a classic in the field. The Iris data set is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc [4, 6].The iris dataset is available online from University California Irvine's (UCI) machine-learning repository of datasets (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) [1,2,3,5,6]. </p>
  
-<img src="https://image.ibb.co/cbYW47/anderson_edgar_pdf.png" style="width: 700px; height:600px;"> <br>
-<img src="https://image.ibb.co/jUYu4x/R_A_Fischer.jpg" style="width: 800px; height:700px;"><br>
-Edgar Anderson and Ronald Fisher
+<img src="https://image.ibb.co/cbYW47/anderson_edgar_pdf.png" style="width: 700px; height:600px;" "align="center"> <br>
+<img src="https://image.ibb.co/jUYu4x/R_A_Fischer.jpg" style="width: 800px; height:700px;" align="center"><br>
+<p align="center">Edgar Anderson and Ronald Fisher</p>
 
 <p align="justify"> The datasset contains data with 150 random samples of flowers of 50 instances from each of three species of irises (*setosa*, *versicolor* and *virginica*). Two parts of the flower were measured: sepal and pedal (lenght and width of each part in cm, total of four features)[1]. </p>
    
@@ -58,7 +64,7 @@ Before starting the project some programs, files and libraries must be downloade
  
  When a library is imported, it means that the library will be loaded into the memory and then it can be use used. To import a library the following code should be run:
  
- ```
+ ``` python
  import csv
  import pandas as pd
  import numpy as np
@@ -140,7 +146,7 @@ with open("data/datairis.csv", "r") as f:
   ``` python
 with open ('data/iris.csv') as f: #open iris data set
    names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class'] 
-   dataset = pandas.read_csv(f, names=names)</b>
+   dataset = pandas.read_csv(f, names=names)
    ```
 ##1.1 Other ways of opening Iris Dataset
 
@@ -289,8 +295,10 @@ print(dataset.describe())
   plt.show()  # show the histogram
   ```
   
- <p> <img src="https://image.ibb.co/hy1BUx/iris_hist_sepallenght.png" align="left"> <img src="https://image.ibb.co/cq9y9x/iris_hist_sepalwidth.png" align="right"></p>
-<p><img src="https://image.ibb.co/kjvuhH/iris_hist_petallenght.png" align="left"> <img src="https://image.ibb.co/jPrBUx/iris_hist_petalwidth.png" align="right"></p>
+<img src="https://image.ibb.co/hy1BUx/iris_hist_sepallenght.png" align="center"> <br>
+<img src="https://image.ibb.co/cq9y9x/iris_hist_sepalwidth.png" align="center"><br>
+<img src="https://image.ibb.co/kjvuhH/iris_hist_petallenght.png" align="center"><br>
+ <img src="https://image.ibb.co/jPrBUx/iris_hist_petalwidth.png" align="center"><br>
 
 ###3.1.2 Histogram of all attributes. It was created one single plot for all attributes.
 
@@ -332,7 +340,7 @@ plt.savefig('iris_plotdataframe.png')  # save plot
 plt.show()  # show the plot
   ```
   
-<img src="https://image.ibb.co/bSpN8c/irisdatasetplotondataframe.png" alt="irisdatasetplotondataframe" border="0">
+<img src="https://image.ibb.co/bSpN8c/irisdatasetplotondataframe.png" alt="irisdatasetplotondataframe" border="0" align="center">
 
 ###3.2.3 All attributes y axis as log-scale.A base-10 log scale is used for the Y axis of the bottom left graph, and the Y axis ranges from 0.1 to 1,000[6].
  
@@ -346,7 +354,7 @@ plt.show()  # show the plot
   plt.show() # show the plot
 ```
 
-<img src="https://image.ibb.co/dpwATc/irisdatasetlogscaleonverticalaxis.png" alt="irisdatasetlogscaleonverticalaxis" border="0">
+<img src="https://image.ibb.co/dpwATc/irisdatasetlogscaleonverticalaxis.png" alt="irisdatasetlogscaleonverticalaxis" border="0" align="center">
   
 <p align="justify"> :arrow_right_hook: #4 Multiple bar plot - Stacked Bar Graph: two or more sets of data are represented. It faciliates comparison between more than one phenomena. In this project, a stacked bar graph (one type of multiple bar plot) was plotted. It shows sub-groups that are displayed on the same bar[7]. So, each sample of flower is a bar and each bar contains 4 attributes of the flower (sepal lenght, sepal width, petal lenght and petal width).</p>
 
@@ -365,7 +373,7 @@ plt.show()  # show the plot
 
 <p align="justify"> :arrow_right_hook:#5 Box and Whisker Plot: also called a box plot the bottom and the top of the box are the first and the third quartiles, while the band inside the box shows the median (second quartile). Data not included between the whiskers are plotted as outlier (small circle). That way, the box plot displays the minimum, first quartile, median, third quartile, and maximum[14,15].</p>
 
-<img src="https://image.ibb.co/mGjQdc/efbb442e599e8ed46c183917f8ffbd90cfc82cab.gif" alt="efbb442e599e8ed46c183917f8ffbd90cfc82cab" border="0" Align="center"> 
+<img src="https://image.ibb.co/mGjQdc/efbb442e599e8ed46c183917f8ffbd90cfc82cab.gif" alt="efbb442e599e8ed46c183917f8ffbd90cfc82cab" border="0" align="center"> 
 <p align="center">Box plot From https://goo.gl/u3g4EN </p>
 
 :heavy_check_mark: Lines 154 - 157 on :file_folder: irisdata.py
@@ -388,7 +396,7 @@ fig=ax.get_figure()
 fig.savefig("iris_box_plot.png") #save plot
  ```
 
-<img src="https://image.ibb.co/njQvTc/iris_boxplot1.png" alt="iris_boxplot1" border="0" align"center">
+<img src="https://image.ibb.co/njQvTc/iris_boxplot1.png" alt="iris_boxplot1" border="0" align="center">
 
 <p align="justify"> :arrow_right_hook:#6 Scatter plot: A scatter plot is a graph in which a set of points plotted on a horizontal and vertical axes.As scatter plots show the extent of correlation between the values of the variables, they are an important tool in statistics. If there is no correlation between the variables the points will show randomly scattered on the coordinate plane. But, if there is a large correlation between the variables, the points concentrate near a straight line. Therefore, scatter plots are quite useful for data visualization as they illustrate a trend. Scatter plots shows not only the extent of correlation, but also the sense of the correlation. Neverthless, scatter plots not show the causation[8,9,10]. </p>
 <p align="justify">   So, if the vertical (called y axis) variable increases and the horizontal (called x axis) variable also increases it means that there is a correlation (positive correlarion). The maximum positive correlation that is possible is +100% or +1 (all points in the plot lie along a straight line in a positive slope). In case the y axis variable decreases and the x axis increases or vice-versa it is a negative correlation. The maximum negative correlation that is possible is -100% or -1 (all the points in the plot lie along a straight line in a negative slope)[8,9,10].  </p>
