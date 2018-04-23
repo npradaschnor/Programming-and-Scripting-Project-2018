@@ -1,6 +1,6 @@
 <h1 align="center"> Project 2018 - Iris Dataset (python)</h1><br>
 
-<img src="https://image.ibb.co/g96qDc/gmitlogo.jpg" alt="gmitlogo" border="0" align="center"><br>
+<img src="https://image.ibb.co/g96qDc/gmitlogo.jpg" alt="gmitlogo" border="0" width=500 align="center">
 <h2 align="center"> Computer Science - Data Analytics course</h2>
 <h2 align="center">Programming and Scripting module</h2></p><br>
 
