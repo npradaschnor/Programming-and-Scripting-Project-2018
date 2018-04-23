@@ -1,7 +1,7 @@
 # Programming-and-Scripting-Project-2018
 
 ###### Project instruction
-The project entails the student researching the data set, and then writing documentation and code in the Python programming language based on that research. An online search for information on the data set will convince the student that many people have investigated and written about it previously, and many of those are not experienced programmers. The student is expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed. 
+<p align="justify">The project entails the student researching the data set, and then writing documentation and code in the Python programming language based on that research. An online search for information on the data set will convince the student that many people have investigated and written about it previously, and many of those are not experienced programmers. The student is expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed.</p> 
 
 ###### Smaller tasks that have to be done to complete the project:
 - [x] Research background information about the data set and write a summary about it
@@ -16,7 +16,7 @@ The project entails the student researching the data set, and then writing docum
 ## Part 1: About Iris Dataset
  [[back to top](#project-instruction)]
  
-  Iris dataset is a multivariate dataset of three classes of Irises and it was collected by the American botanist Edgar Anderson (1935) and introduced by the British statistician and geneticist Ronald Fisher in his article published in 1936 <i>"The Use of Multiple Measurements in Taxonomic Problems"<i> introducing linear-discriminant-function technique. Fisher's paper is referenced frequently to this day for being such a classic in the field. The Iris data set is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc [4, 6].The iris dataset is available online from University California Irvine's (UCI) machine-learning repository of datasets (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) [1,2,3,5,6]. 
+<p align="justify">  Iris dataset is a multivariate dataset of three classes of Irises and it was collected by the American botanist Edgar Anderson (1935) and introduced by the British statistician and geneticist Ronald Fisher in his article published in 1936 <i>"The Use of Multiple Measurements in Taxonomic Problems"<i> introducing linear-discriminant-function technique. Fisher's paper is referenced frequently to this day for being such a classic in the field. The Iris data set is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc [4, 6].The iris dataset is available online from University California Irvine's (UCI) machine-learning repository of datasets (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) [1,2,3,5,6]. </p>
  
 <img src="https://image.ibb.co/cbYW47/anderson_edgar_pdf.png" style="width: 700px; height:600px;"> <br>
 <img src="https://image.ibb.co/jUYu4x/R_A_Fischer.jpg" style="width: 800px; height:700px;"><br>
@@ -74,7 +74,7 @@ _Sklearn_ - package important to do machine learning in python.<br>
 
 I've tried to convert the data from iris data set from strings to float numbers (def function make float) but it didn't work (the last columns couldn't be converted to float or number). 
 
-```
+``` python
 def makefloat(teststr):
  try:
   return float(teststr)  # return a floating point value if possibe.
@@ -84,7 +84,7 @@ def makefloat(teststr):
 
 Every time I tried to deal with dataset I couldn't because the last column contains text. Then, I've tried to delete the last column (named class), so I could get a dataset consisted only with numbers using pandas as it follows.
 
-```
+``` python
 data = pandas.read_csv('data/iris.csv')  # select csv file
 data = data.drop(['class'], axis=1)  # delete the column named 'class'
 data.to_csv('data/datairis.csv') # create new file (that not contains the column 'class')*
@@ -92,7 +92,7 @@ data.to_csv('data/datairis.csv') # create new file (that not contains the column
 
 After I got a dataset that contained only numbers I tried to find a way to find the min and max values of each column. But every code that I've tried didn't work.
 
-```
+``` python
 with open("data/datairis.csv", "r") as f:
   
   lmin_row = []
@@ -125,7 +125,7 @@ After so many attempts to get the min and max values of each column I've started
   
  :heavy_check_mark: Line 33 on :file_folder: irisdata.py
   
-  ```
+  ``` python
   print(plt.style.available)
   ```
   
@@ -137,7 +137,7 @@ After so many attempts to get the min and max values of each column I've started
   
  :heavy_check_mark: Lines 36 - 40 on :file_folder: irisdata.py
  
-  ```
+  ``` python
 with open ('data/iris.csv') as f: #open iris data set
    names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class'] 
    dataset = pandas.read_csv(f, names=names)</b>
@@ -146,7 +146,7 @@ with open ('data/iris.csv') as f: #open iris data set
 
 :heavy_check_mark: Lines 43 - 49 on :file_folder: irisdata.py
  
-  ```
+  ``` python
 dataset1 = datasets.load_iris() #via sklearn
 
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
@@ -163,7 +163,7 @@ To identify the rows that contain missing values. True will indicate that the va
 
 :heavy_check_mark: Line 56 on :file_folder: irisdata.py
  
-   ```
+   ``` python
 print(pandas.isnull(dataset))
    ```
 
@@ -173,7 +173,7 @@ print(pandas.isnull(dataset))
   
  :heavy_check_mark: Line 59 on :file_folder: irisdata.py
   
-  ```
+  ``` python
 print(type(dataset)) 
   ```
 
@@ -183,7 +183,7 @@ print(type(dataset))
   
  :heavy_check_mark: Line 62 on :file_folder: irisdata.py
   
-  ```
+  ``` python
 print(dataset.shape)
  ``` 
  
@@ -193,7 +193,7 @@ print(dataset.shape)
  
  :heavy_check_mark: Line 65 on :file_folder: irisdata.py
  
-  ```
+  ``` python
 print(dataset.columns)
   ```
 
@@ -203,7 +203,7 @@ print(dataset.columns)
  
  :heavy_check_mark: Line 68 on :file_folder: irisdata.py
  
-  ```  
+  ``` python
 print(dataset.groupby('class').size())
    ```
   
@@ -213,7 +213,7 @@ print(dataset.groupby('class').size())
 
  :heavy_check_mark: Line 71 on :file_folder: irisdata.py
    
-   ```
+   ``` python
 print(dataset.info()) 
   ```
   
@@ -223,7 +223,7 @@ print(dataset.info())
   
  :heavy_check_mark: Line 74 on :file_folder: irisdata.py
   
-  ```
+  ``` python
 print(dataset.tail(20)) 
   ```
 
@@ -233,7 +233,7 @@ print(dataset.tail(20))
 
 :heavy_check_mark: Line 77 on :file_folder: irisdata.py
 
- ```
+ ``` python
 print(dataset.pivot_table(index='class', values=['sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))
  ```
  
@@ -243,7 +243,7 @@ print(dataset.pivot_table(index='class', values=['sepal-length', 'sepal-width', 
 
 :heavy_check_mark: Line 80 on :file_folder: irisdata.py
 
-  ```
+  ``` python
 print(dataset.describe())
    ```
    
@@ -259,7 +259,7 @@ print(dataset.describe())
 
 :heavy_check_mark: Lines 88 - 114 on :file_folder: irisdata.py
  
-  ```
+  ``` python
   dataset.hist('sepal-length') #plot the histogram of sepal lenght
   plt.title('Histogram of sepal lenght') #title of histogram
   plt.xlabel('Sepal lenght in cm') #x axis label
@@ -298,7 +298,7 @@ print(dataset.describe())
 
 :heavy_check_mark: Lines 117 - 119 on :file_folder: irisdata.py
 
-```
+``` python
 dataset.hist() #histogram plot of all 4 attributes
 plt.savefig('iris_hist.png')  # save plot
 plt.show() #show plot
@@ -311,7 +311,7 @@ plt.show() #show plot
  
 :heavy_check_mark: Lines 124 - 130 on :file_folder: irisdata.py
  
-  ```
+  ``` python
 sl_arr = dataset['sepal-length'].values
 print(type(sl_arr)) #print the type of var
   
@@ -327,7 +327,7 @@ plt.show() # show the plot
 
 :heavy_check_mark: Lines 133 - 136 on :file_folder: irisdata.py
 
-  ```
+  ``` python
 dataset.plot()  # plot dataframe (pandas)
 plt.title('Iris dataset plot on Dataframe')
 plt.savefig('iris_plotdataframe.png')  # save plot
@@ -340,7 +340,7 @@ plt.show()  # show the plot
  
 :heavy_check_mark: Lines 139 - 143 on :file_folder: irisdata.py
  
- ```
+ ``` python
   dataset.plot()
   plt.yscale('log') #fixing scales - log scale on vertical axis
   plt.title('Iris dataset log scale on vertical axis')
@@ -354,7 +354,7 @@ plt.show()  # show the plot
 
 :heavy_check_mark: Lines 146 - 151 on :file_folder: irisdata.py
  
- ```
+ ``` python
 dataset.plot(kind='barh', stacked=True)  # multiple bar plot
 plt.savefig('iris_plotdataframe.png') #save the plot
 plt.xlabel('in cm')  # x axis label
@@ -371,7 +371,7 @@ plt.show()  # show the plot
 
 :heavy_check_mark: Lines 154 - 157 on :file_folder: irisdata.py
  
- ```
+ ``` python
 color = dict(boxes='DarkGreen', whiskers='DarkOrange',medians='DarkBlue', caps='Gray')#colors
 dataset.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, sharey=False, color=color)#plot type box
 plt.savefig('iris_box_and_whisker_plot.png') #save the plot
@@ -382,7 +382,7 @@ plt.show() #show the plot
 
 :heavy_check_mark: Lines 159 - 162 on :file_folder: irisdata.py
 
- ```
+ ``` python
 iris = sns.load_dataset("iris") #load iris dataset via seaborn
 ax = sns.boxplot(data=iris, orient="h", palette="coolwarm") #boxplot (seaborn)
 fig=ax.get_figure()
@@ -398,7 +398,7 @@ fig.savefig("iris_box_plot.png") #save plot
 
 :heavy_check_mark: Lines 166 -206 on :file_folder: irisdata.py
  
- ```
+ ``` python
  dataset = datasets.load_iris() #load iris dataset via sklearn
 
 X = dataset.data
