@@ -17,7 +17,7 @@
 - [x]  Write a summary of your investigations
 - [x] Include supporting tables and graphics as you deem necessary
 
-#### Python script is on :file_folder: <a href="https://github.com/npradaschnor/Programming-and-Scripting-Project-2018/blob/master/irisdata.py" target="blank"> "irisdata.py" </a>
+#### Python script is on :file_folder: <a href="https://github.com/npradaschnor/Programming-and-Scripting-Project-2018/blob/master/irisdata.py" target="_blank"> "irisdata.py" </a>
 
 ## Part 1: About Iris Dataset
  [[back to top](#project-instruction)]
