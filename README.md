@@ -1,7 +1,8 @@
 <h1 align="center"> Project 2018 - Iris Dataset (python)</h1><br>
 
 <img src="https://image.ibb.co/g96qDc/gmitlogo.jpg" alt="gmitlogo" border="0" align="center"><br>
-<p align="center"><h3> Computer Science - Data Analytics course</h2> | <h3>Programming and Scripting module</h2></p><br>
+<h2 align="center"> Computer Science - Data Analytics course</h2>
+<h2 align="center">Programming and Scripting module</h2></p><br>
 
 <h3 align="center"><i>Noa P Prada Schnor  G00364704<i> </h3><br><br><br>
 
