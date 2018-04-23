@@ -1,10 +1,10 @@
 <h1 align="center"> Project 2018 - Iris Dataset (python)</h1><br>
 
-<img src="https://image.ibb.co/g96qDc/gmitlogo.jpg" alt="gmitlogo" border="0" width=500 align="center">
+<p align="center"><img src="https://image.ibb.co/g96qDc/gmitlogo.jpg" alt="gmitlogo" border="0" width=500 align="center"></p>
 <h2 align="center"> Computer Science - Data Analytics course</h2>
-<h2 align="center">Programming and Scripting module</h2></p><br>
+<h2 align="center">Programming and Scripting module</h2></p>
 
-<h3 align="center"><i>Noa P Prada Schnor  G00364704<i> </h3><br><br><br>
+<h3 align="center"><i>Noa P Prada Schnor  G00364704<i> </h3><br><br>
 
 ###### Project instruction
 <p align="justify">The project entails the student researching the data set, and then writing documentation and code in the Python programming language based on that research. An online search for information on the data set will convince the student that many people have investigated and written about it previously, and many of those are not experienced programmers. The student is expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed.</p> 
@@ -17,7 +17,7 @@
 - [x]  Write a summary of your investigations
 - [x] Include supporting tables and graphics as you deem necessary
 
-#### Python script is on :file_folder: <a href="https://github.com/npradaschnor/Programming-and-Scripting-Project-2018/blob/master/irisdata.py"> "irisdata.py" </a>
+#### Python script is on :file_folder: <a href="https://github.com/npradaschnor/Programming-and-Scripting-Project-2018/blob/master/irisdata.py" target="blank"> "irisdata.py" </a>
 
 ## Part 1: About Iris Dataset
  [[back to top](#project-instruction)]
