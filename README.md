@@ -1,4 +1,4 @@
-<h1 align="center"> Project 2018 - Fisher Iris Flower data set (python)</h1><br>
+<h1 align="center"> Project 2018 - Fisher Iris Flower data set (<i>Python</i>)</h1><br>
 
 <p align="center"><img src="https://image.ibb.co/g96qDc/gmitlogo.jpg" alt="gmitlogo" border="0" width=450 align="center"></p>
 <h2 align="center"> Higher Diploma in Science in Data Analytics</h2>
