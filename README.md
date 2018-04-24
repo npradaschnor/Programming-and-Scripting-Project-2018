@@ -373,7 +373,7 @@ plt.show()  # show the plot
 <p align="justify"> :arrow_right_hook:#5 Box and Whisker Plot: also called a box plot the bottom and the top of the box are the first and the third quartiles, while the band inside the box shows the median (second quartile). Data not included between the whiskers are plotted as outlier (small circle). That way, the box plot displays the minimum, first quartile, median, third quartile, and maximum[14,15].</p>
 
 <p align="center"><img src="https://image.ibb.co/mGjQdc/efbb442e599e8ed46c183917f8ffbd90cfc82cab.gif" alt="efbb442e599e8ed46c183917f8ffbd90cfc82cab" border="0" align="center"></p>
-<p align="center">Box plot From https://goo.gl/u3g4EN </p>
+<p align="center">Box plot. From https://goo.gl/u3g4EN </p>
 
 :heavy_check_mark: Lines 154 - 157 on :file_folder: irisdata.py
  
@@ -384,7 +384,7 @@ plt.savefig('iris_box_and_whisker_plot.png') #save the plot
 plt.show() #show the plot
  ```
 
-<img src="https://image.ibb.co/c8av7S/iris_box_and_whisker_plot.png" alt="iris_box_and_whisker_plot" border="0" align="center">
+<p align="center"><img src="https://image.ibb.co/c8av7S/iris_box_and_whisker_plot.png" alt="iris_box_and_whisker_plot" border="0" align="center"></p>
 
 :heavy_check_mark: Lines 159 - 162 on :file_folder: irisdata.py
 
