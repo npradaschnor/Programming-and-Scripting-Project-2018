@@ -22,17 +22,20 @@
 ## Part 1: About Iris Dataset
  [[back to top](#project-instruction)]
  
-<p align="justify">  Iris dataset is a multivariate dataset of three classes of Irises and it was collected by the American botanist Edgar Anderson (1935) and introduced by the British statistician and geneticist Ronald Fisher in his article published in 1936 <i>"The Use of Multiple Measurements in Taxonomic Problems"<i> introducing linear-discriminant-function technique. Fisher's paper is referenced frequently to this day for being such a classic in the field. The Iris data set is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc [4, 6].The iris dataset is available online from University California Irvine's (UCI) machine-learning repository of datasets (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) [1,2,3,5,6]. </p>
- 
+<p align="justify">  Iris dataset is a multivariate dataset of three classes of Irises and it was collected by the American botanist Edgar Anderson (1935) and introduced by the British statistician and geneticist Ronald Fisher in his article published in 1936 <i>"The Use of Multiple Measurements in Taxonomic Problems"<i> introducing linear-discriminant-function technique. Fisher's paper is referenced frequently to this day for being such a classic in the field. Basically, discriminant analysis aims to produce a simple function that, based on four measurements, will classify a flower specie correctly.Instead of 'guessing' it was the beginning of creating “predictors” to classify the samples in the dataset. The Iris data set is a best known and understood dataset and one of the most used to analyse data sets in statistics, data visualization, machine learning, etc [4, 6].The iris dataset is available online from University California Irvine's (UCI) machine-learning repository of datasets (http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data) [1,2,3,5,6]. </p>
+
 <p align="center"><img src="https://image.ibb.co/cbYW47/anderson_edgar_pdf.png" width=222px><img src="https://image.ibb.co/jUYu4x/R_A_Fischer.jpg" width=250px></p><br>
 <p align="center">Edgar Anderson and Ronald Fisher</p>
 
-<p align="justify"> The datasset contains data with 150 random samples of flowers of 50 instances from each of three species of irises (*setosa*, *versicolor* and *virginica*). Two parts of the flower were measured: sepal and pedal (lenght and width of each part in cm, total of four features)[1]. </p>
-   
+<p align="justify"> The dataset contains data with 150 random samples of flowers of 50 instances from each of three species of irises (<i>setosa</i>, <i>versicolor</i> and <i>virginica</i>). Two parts of the flower were measured: sepal and pedal (lenght and width of each part in cm, total of four features)[1]. </p>
+
+<p align="center"><img src="https://image.ibb.co/b2wYZH/iris_machinelearning.png" alt="iris_machinelearning" border="0" width=500px></p><br>
+<p align="center">Three iris species/classes. From: https://goo.gl/RSwtrk</p>
+
  <p align="center"><img src="https://image.ibb.co/gbSzP7/irisdataset.png" align="center" width=600px></p><br>
 <p align="center"> Iris attributes. From: https://rpubs.com/wjholst/322258</p>
   
-<p align="justify"> Therefore, there are 5 attributes in the data base: sepal lenght in cm, sepal widht in cm, petal lenght in cm, petal width in cm and class - *iris setosa*, *iris versicolor* and *iris virginica* [2,4,6,7]. The archive of Iris dataset can be view with any text editor and it contains 5 columns in each row: first four is the features and the fifth one is the label[1].</p>
+<p align="justify"> The archive of Iris dataset can be view with any text editor and it contains 5 columns in each row: first four contains the features (sepal lenght in cm, sepal widht in cm, petal lenght in cm, petal width in cm) and the fifth one is the class label (<i>iris setosa</i>, <i>iris versicolor</i> and <i>iris virginica</i>) [1,2,4,6,7].</p>
  
  <p align="center"><img src="https://image.ibb.co/kTbs2H/2018_04_11_13_05_03_sq_Es_Wbo_png_451_592.png"></p><br>
  <p align="center">Iris Dataset characteristics. From: http://scikit-learn.org/stable/datasets/index.html#datasets</p>
@@ -57,8 +60,8 @@ Before starting the project some programs, files and libraries must be downloade
 <ol>
  <li>Python version 3.6 downloaded via Anaconda3</li>
  <li>Visual Studio Code version 1.21.1 downloaded and set up with Github</li> 
- <li>Iris dataset downloaded from UCI website and from other ways, such as via sklearn </li>
- <li>Libraries imported: csv, pandas, numpy, matplotlib and sklearn </li>
+ <li>Iris dataset downloaded from UCI website or it can be done from other ways, such as via sklearn </li>
+ <li>Libraries imported: csv, pandas, numpy, matplotlib,seaborn and sklearn </li>
  </ol>
  
  When a library is imported, it means that the library will be loaded into the memory and then it can be use used. To import a library the following code should be run:
@@ -67,6 +70,7 @@ Before starting the project some programs, files and libraries must be downloade
  import csv
  import pandas as pd
  import numpy as np
+ import seaborn as sns
  import sklearn
  ```
  
@@ -77,7 +81,7 @@ _Matplotlib_ - good package to contruct visualizations.<br>
 _Seaborn_ - it is based on matplotlib that provides a high-level interface for drawing attractive statistical graphics.<br>
 _Sklearn_ - package important to do machine learning in python.<br>
 
-<p align="justify"> I've tried to convert the data from iris data set from strings to float numbers (def function make float) but it didn't work (the last columns couldn't be converted to float or number). </p>
+<p align="justify"> I've tried to convert the data from iris data set from strings to float numbers (def function make float) but it didn't work (the last columns couldn't be converted to float or number). The function below was based on Gerhard Van Der Linde posted in moodle discussion page. </p>
 
 ``` python
 def makefloat(teststr):
@@ -87,7 +91,7 @@ def makefloat(teststr):
   return teststr  # otherwise return the string as is*
  ```   
 
-<p align="justify"> Every time I tried to deal with dataset I couldn't because the last column contains text. Then, I've tried to delete the last column (named class), so I could get a dataset consisted only with numbers using pandas as it follows.</p>
+<p align="justify"> Then, I tried to delete the last column (named class), so I could get a dataset consisted only with numbers using pandas as it follows.</p>
 
 ``` python
 data = pandas.read_csv('data/iris.csv')  # select csv file
@@ -95,7 +99,7 @@ data = data.drop(['class'], axis=1)  # delete the column named 'class'
 data.to_csv('data/datairis.csv') # create new file (that not contains the column 'class')*
 ```
 
-<p align="justify"> After I got a dataset that contained only numbers I tried to find a way to find the min and max values of each column. But every code that I've tried didn't work.</p>
+<p align="justify"> After I got a dataset that contained only numbers I tried to find a way to find the min and max values of each column. But every code that I tried didn't work.</p>
 
 ``` python
 with open("data/datairis.csv", "r") as f:
@@ -122,7 +126,7 @@ with open("data/datairis.csv", "r") as f:
 
 [[back to top](#project-instruction)]
 
-<p align="justify"> After so many attempts to get the min and max values of each column I've started to read more about the Iris Data Set and I've found an article about Iris Data Set and Machine Learning written by Jason Brownlee, Ph.D and he aimed to help professional developers to get started and confidently apply machine learning to address complex problems. In the article Jason Brownlee explains in a simple way about how to do machine learning using Python and he used Iris Data Set as an example using some key libraries , such as numpy, pandas, matplotlib, scipy and sklearn. In a easy and fast way I could analyse the data: getting descriptions (mean, min, max values and percentiles) of each attribute, creating histogram of each numerical variable. Moreover, I've found an online course about Pandas DataFrame on DataCamp and it help me to understand some code/functions and based on the videos I could create some of the codes, specially to get more info about the data set that I'm working on it. All these websites opened my mind to Pandas, Numpy, Matplot, etc. Then, it got easier to understand how I could get graphics in a few lines of code. Besides, reading some tutorials (Pyplot, Numpy, Pandas) I could improve my plots by giving them a title, axis label, etc.</p>
+<p align="justify"> After so many failed attempts to get the min and max values of each column I've started to read more about the Iris Data Set and I've found an article about Iris Data Set and Machine Learning written by Jason Brownlee, Ph.D aimed to help professional developers to get started and confidently apply machine learning to address complex problems. In the article Jason Brownlee explains in a simple way about how to do machine learning using Python and he used Iris Data Set as an example using some key libraries , such as numpy, pandas, matplotlib, scipy and sklearn. In a easy and fast way I could analyse the data: getting descriptions (mean, min, max values and percentiles) of each attribute, creating histogram of each numerical variable. Moreover, I've found an online course about Pandas DataFrame on DataCamp and it help me to understand some code/functions and based on the videos I could create some of the codes, specially to get more info about the data set that I'm working on it. All these websites opened my mind to Pandas, Numpy, Matplot, etc. As I was reading more online articles about machine learning I could plan how I could analyse Iris Data set.  I could that it was possible to run some descriptive statistics and to create plots in a few lines of code. </p>
   
 <p align="justify">   That way, after I read so many articles about Iris dataset and machine learning, Exploratory Data Analysis the following steps have been done:</p>
   
@@ -164,7 +168,7 @@ dataset3 = sns.load_dataset("iris") #via seaborn
 <p align="justify"> :arrow_right: #2 Information about the dataset: type, number of rows and columns, name of the columns, pandas index, datatimeindex(number of columns, type of data in each column, ...). Moreover, to get a general idea about the dataset and to take a closer look at the data itself the function  (dataset.tail(20)) was used to check out the last 20 rows. That way, I got a general idea about the data set.</p>
 
 ##2.1 Checking missing values
-<p align="justify"> To identify the rows that contain missing values. True will indicate that the value contained within the cell is a missing value, False means that the cell contains a ‘normal’ value. In this case, there are no missing values.</p>
+<p align="justify"> The function isnull (pandas) was used to identify the rows that contain missing values. True indicates that the value contained within the cell is a missing value and False indicates that the cell contains a non missing ('normal') value. In this case, there are no missing values.</p>
 
 :heavy_check_mark: Line 56 on :file_folder: irisdata.py
  
@@ -184,7 +188,7 @@ print(type(dataset))
 
 <p align="center"><img src="https://image.ibb.co/mNM4Z7/irisdata_data_type.png" alt="irisdata_data_type" border="0"></p>
 
- ##2.3 Number of rows and columns
+ ##2.3 Number of rows and columns: 150 rows and 5 columns
   
  :heavy_check_mark: Line 62 on :file_folder: irisdata.py
   
@@ -194,7 +198,7 @@ print(dataset.shape)
  
 <p align="center"><img src="https://image.ibb.co/eR9rE7/irisdata_number_of_rows_and_columns.png" alt="irisdata_number_of_rows_and_columns" border="0" align="center"></p>
  
- ##2.4 Name of the columns
+ ##2.4 Name of the columns: sepal lenght, sepal width, petal lenght, petal width, class
  
  :heavy_check_mark: Line 65 on :file_folder: irisdata.py
  
@@ -204,7 +208,7 @@ print(dataset.columns)
 
 <p align="center"><img src="https://image.ibb.co/gNWou7/irisdata_index_header.png" alt="irisdata_index_header" border="0" align="center"></p>
 
-<p align="justify">  ##2.5 Class distribution. There are 150 samples of flowers: 50 are <i>iris setosa<i>, 50 are <i>iris versicolor<i> and 50 are <i>iris virginica<i></p>
+<p align="justify">  ##2.5 Class distribution. There are 150 samples of flowers: 50 instances of each class (<i>iris setosa<i>, <i>iris versicolor<i> and <i>iris virginica<i>). That way, it is a balanced dataset.</p>
  
  :heavy_check_mark: Line 68 on :file_folder: irisdata.py
  
@@ -214,8 +218,8 @@ print(dataset.groupby('class').size())
   
 <p align="center"><img src="https://image.ibb.co/ngabgn/irisdata_class.png" alt="irisdata_class" border="0" align="center"></p>
    
- ##2.6 Dataset index: datatimeindex,n.of columns,type of data of each column, data types of the whole dataset, etc.
-
+ ##2.6 Dataset index: datatimeindex,number of columns,type of data of each column, data types of the whole dataset, etc. There are 150 samples (rows 0 to 149) and 5 columns. As it can be notice, the first four columns contain floating numbers and the fifth columns contains strings (object). 
+ 
  :heavy_check_mark: Line 71 on :file_folder: irisdata.py
    
    ``` python
@@ -224,7 +228,7 @@ print(dataset.info())
   
 <p align="center"><img src="https://image.ibb.co/crFv7S/irisdata_datetime.png" alt="irisdata_datetime" border="0" align="center"></p>
   
- ##2.7 Checking the last 20 rows of the dataset.
+ ##2.7 Checking the last 20 rows of the dataset: from row 130 to 149.
   
  :heavy_check_mark: Line 74 on :file_folder: irisdata.py
   
@@ -242,9 +246,9 @@ print(dataset.tail(20))
 print(dataset.pivot_table(index='class', values=['sepal-length', 'sepal-width', 'petal-length', 'petal-width'], aggfunc=np.mean))
  ```
  
-<p align="center"><img src="https://image.ibb.co/k0XsnS/irisdata_20_rows_tail.png" alt="irisdata_20_rows_tail" border="0" align="center"></p>
+<p align="center"><<img src="https://image.ibb.co/n0VXTc/iris_pivot_table.png" alt="iris_pivot_table" border="0">></p>
  
-<p align="justify"> ##2.9 Data description. Summary statistics that exclude NaN values -  table that summarises the numeric information in the dataset, such as count, mean, standard deviation, minimum and maximum values and the quantiles of the data. It  was useful to gain a general sense of how the data is structured and about the data per se. </p>
+<p align="justify"> ##2.9 Data description. Summary statistics that exclude NaN values -  table that summarises the numeric information in the dataset, such as count, mean, standard deviation, minimum and maximum values and the quantiles (25%, 50% and 75%) of the data. It  was useful to gain a general sense of how the data is structured and about the data per se. For example, it is possible to see that the numercial values are all in centimeters and they range from 0 to 8 cm. Looking at the mean values it is clear that sepal is larger than petal. </p>
 
 :heavy_check_mark: Line 80 on :file_folder: irisdata.py
 
@@ -258,7 +262,7 @@ print(dataset.describe())
 
 [[back to top](#project-instruction)]
 
-<p align="justify"> :arrow_right_hook: ##3.1 Histograms: 'A histogram is a plot that lets you discover, and show, the underlying frequency distribution (shape) of a set of continuous data. This allows the inspection of the data for its underlying distribution (e.g., normal distribution), outliers, skewness, etc'[4,5].</p>
+<p align="justify"> :arrow_right_hook: ##3.1 Histograms: 'A histogram is a plot that lets you discover, and show, the underlying frequency distribution (shape) of a set of continuous data. This allows the inspection of the data for its underlying distribution (e.g., normal distribution), outliers, skewness, etc'[4,5]. That way histogram are used to see how each attribute is distributed. Looking at the histogram plots below we can assume that two of the input variables (sepal lenght and sepal widht) might have a Gaussian distribution.</p>
 
 ###3.1.1 Histogram of each attribute. It was created separate histogram for each attribute.
 
@@ -370,7 +374,7 @@ plt.show()  # show the plot
  
 <p align="center"><img src="https://image.ibb.co/j3O0cH/Figure_1.png" align="center"></p>
 
-<p align="justify"> :arrow_right_hook:#5 Box and Whisker Plot: also called a box plot the bottom and the top of the box are the first and the third quartiles, while the band inside the box shows the median (second quartile). Data not included between the whiskers are plotted as outlier (small circle). That way, the box plot displays the minimum, first quartile, median, third quartile, and maximum[14,15].</p>
+<p align="justify"> :arrow_right_hook:#5 Box and Whisker Plot: also called a box plot the bottom and the top of the box are the first and the third quartiles, while the band inside the box shows the median (second quartile). Data not included between the whiskers are plotted as outlier (small circle). That way, the box plot displays the minimum, first quartile, median, third quartile, and maximum[14,15].This plot gives us just a sketchy estimate of the distribution of the values for each attribute.</p>
 
 <p align="center"><img src="https://image.ibb.co/mGjQdc/efbb442e599e8ed46c183917f8ffbd90cfc82cab.gif" alt="efbb442e599e8ed46c183917f8ffbd90cfc82cab" border="0" align="center"></p>
 <p align="center">Box plot. From https://goo.gl/u3g4EN </p>
@@ -398,7 +402,7 @@ fig.savefig("iris_box_plot.png") #save plot
 <p align="center"><img src="https://image.ibb.co/njQvTc/iris_boxplot1.png" alt="iris_boxplot1" border="0" align="center"></p>
 
 <p align="justify"> :arrow_right_hook:#6 Scatter plot: A scatter plot is a graph in which a set of points plotted on a horizontal and vertical axes.As scatter plots show the extent of correlation between the values of the variables, they are an important tool in statistics. If there is no correlation between the variables the points will show randomly scattered on the coordinate plane. But, if there is a large correlation between the variables, the points concentrate near a straight line. Therefore, scatter plots are quite useful for data visualization as they illustrate a trend. Scatter plots shows not only the extent of correlation, but also the sense of the correlation. Neverthless, scatter plots not show the causation[8,9,10]. </p>
-<p align="justify">   So, if the vertical (called y axis) variable increases and the horizontal (called x axis) variable also increases it means that there is a correlation (positive correlarion). The maximum positive correlation that is possible is +100% or +1 (all points in the plot lie along a straight line in a positive slope). In case the y axis variable decreases and the x axis increases or vice-versa it is a negative correlation. The maximum negative correlation that is possible is -100% or -1 (all the points in the plot lie along a straight line in a negative slope)[8,9,10].  </p>
+<p align="justify">   So, if the vertical (called y axis) variable increases and the horizontal (called x axis) variable also increases it means that there is a correlation (positive correlarion). The maximum positive correlation that is possible is +100% or +1 (all points in the plot lie along a straight line in a positive slope). In case the y axis variable decreases and the x axis increases or vice-versa it is a negative correlation. The maximum negative correlation that is possible is -100% or -1 (all the points in the plot lie along a straight line in a negative slope)[8,9,10]. From the scattered plots created for this project the <i>iris setosa</i> can be distinctly distinguish, but the other two classes cannot be distinguished so clearly based on their sepal lenght and sepal width. That way, to distinguish <i>iris versicolor</i> from <i>iris virginica</i> some other features should be analysed.</p>
   
 ##6.1 Linear transformation techniques - Principal Component Analysis (PCA) and Linear Discriminant Analysis (LDA)
 
@@ -474,7 +478,3 @@ plt.show()  # show PCA and LDA plots
 [15]https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/box-whisker-plots/a/box-plot-review<br>
 
 [[back to top](#project-instruction)]
-
-LEMBRETE PARA MIM MESMA
-- verificar se todos os graficos foram colocados no arquivo
-- explicar os resultados dos plots
