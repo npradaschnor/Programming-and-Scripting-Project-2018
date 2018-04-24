@@ -71,6 +71,7 @@ Before starting the project some programs, files and libraries must be downloade
  import pandas as pd
  import numpy as np
  import seaborn as sns
+ import scipy
  import sklearn
  ```
  
@@ -79,6 +80,7 @@ _Pandas_ - for data-frame management package that allows for some useful functio
 _Numpy_ - package useful for lineal algebra.<br>
 _Matplotlib_ - good package to contruct visualizations.<br>
 _Seaborn_ - it is based on matplotlib that provides a high-level interface for drawing attractive statistical graphics.<br>
+_Scipy_ - a collection of numerical algorithms including statistics.<br>
 _Sklearn_ - package important to do machine learning in python.<br>
 
 <p align="justify"> I've tried to convert the data from iris data set from strings to float numbers (def function make float) but it didn't work (the last columns couldn't be converted to float or number). The function below was based on Gerhard Van Der Linde posted in moodle discussion page. </p>
