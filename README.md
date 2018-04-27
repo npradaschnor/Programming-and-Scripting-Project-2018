@@ -317,7 +317,7 @@ plt.show() #show plot
 ```
 <p align="center"><img src="https://image.ibb.co/e54PZ7/iris_hist_allattributes.png" align="center"></p>
 
-<p align="justify"> :arrow_right_hook: ##3.2 Plot on Dataframe/Series: The x axis represents the sample of 150 flowers and the y axis represents the lenght of sepal (in cm) of each flower. </p>
+<p align="justify"> :arrow_right_hook: ##3.2 Line Chart - Plot on Dataframe/Series: The x axis represents the sample of 150 flowers and the y axis represents the lenght of sepal (in cm) of each flower. </p>
  
  ###3.2.1 Sepal lenght 
  
@@ -335,7 +335,7 @@ plt.show() # show the plot
   
 <p align="center"><img src="https://image.ibb.co/c1Kpoc/sepallenghtdataframeplotpng.png" alt="sepallenghtdataframeplotpng" border="0"></p>
  
- ###3.2.2 All attributes
+ ###3.2.2 Line Chart - all attributes
 
 :heavy_check_mark: Lines 133 - 136 on :file_folder: irisdata.py
 
@@ -348,7 +348,7 @@ plt.show()  # show the plot
   
 <p align="center"><img src="https://image.ibb.co/bSpN8c/irisdatasetplotondataframe.png" alt="irisdatasetplotondataframe" border="0" align="center"></p>
 
-###3.2.3 All attributes y axis as log-scale.A base-10 log scale is used for the Y axis of the bottom left graph, and the Y axis ranges from 0.1 to 1,000[6].
+###3.2.3 Line Chart - all attributes y axis as log-scale.A base-10 log scale is used for the Y axis of the bottom left graph, and the Y axis ranges from 0.1 to 1,000[6].
  
 :heavy_check_mark: Lines 139 - 143 on :file_folder: irisdata.py
  
