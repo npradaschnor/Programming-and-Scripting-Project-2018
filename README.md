@@ -317,9 +317,9 @@ plt.show() #show plot
 ```
 <p align="center"><img src="https://image.ibb.co/e54PZ7/iris_hist_allattributes.png" align="center"></p>
 
-<p align="justify"> :arrow_right_hook: ##3.2 Line Chart - Plot on Dataframe/Series: The x axis represents the sample of 150 flowers and the y axis represents the lenght of sepal (in cm) of each flower. </p>
+<p align="justify"> :arrow_right_hook: ##3.2 Line Chart - Plot on Dataframe/Series: it is a type of graph/chart that displays informatiion as a series of data points that are connected by straight line segments. This type of graph/chart is common in many fields.The x axis represents the sample of 150 flowers and the y axis represents the lenght of sepal (in cm) of each flower. </p>
  
- ###3.2.1 Sepal lenght 
+ ###3.2.1 Line Chart - Sepal lenght 
  
 :heavy_check_mark: Lines 124 - 130 on :file_folder: irisdata.py
  
