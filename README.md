@@ -56,7 +56,7 @@
 ## Part 2: My investigations (DRAFT)
 [[back to top](#project-instruction)]
 
-Before starting the project some programs, files and libraries must be downloaded and installed:
+Before starting the project some programs, files and libraries were downloaded and installed:
 <ol>
  <li>Python version 3.6 downloaded via Anaconda3</li>
  <li>Visual Studio Code version 1.21.1 downloaded and set up with Github</li> 
@@ -75,7 +75,7 @@ Before starting the project some programs, files and libraries must be downloade
  import sklearn
  ```
  
-Some information about some of the libraries imported[1]: 
+Some information about some of the libraries imported[1]: <br>
 _Pandas_ - for data-frame management package that allows for some useful function on the dataset.<br>
 _Numpy_ - package useful for lineal algebra.<br>
 _Matplotlib_ - good package to contruct visualizations.<br>
@@ -93,7 +93,7 @@ def makefloat(teststr):
   return teststr  # otherwise return the string as is*
  ```   
 
-<p align="justify"> Then, I tried to delete the last column (named class), so I could get a dataset consisted only with numbers using pandas as it follows.</p>
+<p align="justify"> Then, I tried to delete the last column (named class), so I could get a dataset consisted only with numbers using pandas as it follows. </p>
 
 ``` python
 data = pandas.read_csv('data/iris.csv')  # select csv file
@@ -101,7 +101,7 @@ data = data.drop(['class'], axis=1)  # delete the column named 'class'
 data.to_csv('data/datairis.csv') # create new file (that not contains the column 'class')*
 ```
 
-<p align="justify"> After I got a dataset that contained only numbers I tried to find a way to find the min and max values of each column. But every code that I tried didn't work.</p>
+<p align="justify"> After I got a dataset that contained only numbers I tried to find a way to get the min and max values of each column. But every code that I tried didn't work. </p>
 
 ``` python
 with open("data/datairis.csv", "r") as f:
@@ -123,12 +123,13 @@ with open("data/datairis.csv", "r") as f:
   
  -> lmin_row.append(min(row)) ValueError: could not convert string to float: 'sepal length'*
   ```
+ I realised that it might be easy to deal with a dataset that contains only numbers, but it is important the information about which class of iris flower each sample of the dataset is. So many investigations can be done based on class labels.
  
-:clipboard: Note: the attempts to deal with Iris Dataset that didn't have sucess are not shown in the code block of 'irisdata.py' file.
+:clipboard: Note: the attempts to deal with Iris Dataset that didn't have sucess are not shown in the code block of on :file_folder: <a href="https://github.com/npradaschnor/Programming-and-Scripting-Project-2018/blob/master/irisdata.py" target="_blank"> "irisdata.py" </a>.
 
 [[back to top](#project-instruction)]
 
-<p align="justify"> After so many failed attempts to get the min and max values of each column I've started to read more about the Iris Data Set and I've found an article about Iris Data Set and Machine Learning written by Jason Brownlee, Ph.D aimed to help professional developers to get started and confidently apply machine learning to address complex problems. In the article Jason Brownlee explains in a simple way about how to do machine learning using Python and he used Iris Data Set as an example using some key libraries , such as numpy, pandas, matplotlib, scipy and sklearn. In a easy and fast way I could analyse the data: getting descriptions (mean, min, max values and percentiles) of each attribute, creating histogram of each numerical variable. Moreover, I've found an online course about Pandas DataFrame on DataCamp and it help me to understand some code/functions and based on the videos I could create some of the codes, specially to get more info about the data set that I'm working on it. All these websites opened my mind to Pandas, Numpy, Matplot, etc. As I was reading more online articles about machine learning I could plan how I could analyse Iris Data set.  I could that it was possible to run some descriptive statistics and to create plots in a few lines of code. </p>
+<p align="justify"> After so many failed attempts to get the min and max values of each column I've started to read more about the Iris Data Set and I've found an article about Iris Data Set and Machine Learning written by Jason Brownlee, Ph.D aimed to help professional developers to get started and confidently apply machine learning to address complex problems. In the article Jason Brownlee explains in a simple way about how to do machine learning using Python and he used Iris Data Set as an example using some key libraries , such as numpy, pandas, matplotlib, scipy and sklearn. In an easy and fast way I could analyse the data: getting descriptions (mean, min, max values and percentiles) of each attribute, creating histogram of each numerical variable. Moreover, I've found an online course about Pandas DataFrame on DataCamp and it help me to understand some code/functions and based on the videos I could create some of the codes, specially to get more info about the data set that I'm working on it. All these websites opened my mind to Pandas, Numpy, Matplot, etc. As I was reading more online articles about machine learning I could plan how I could analyse Iris Data set and I've realised that it was possible to run some descriptive statistics and to create plots in a few lines of code. </p>
   
 <p align="justify">   That way, after I read so many articles about Iris dataset and machine learning, Exploratory Data Analysis the following steps have been done:</p>
   
