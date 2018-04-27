@@ -1,6 +1,8 @@
 #Noa P Prada Schnor From 2018-03-24 to 2018-04-29
 # Python script to analyse Iris Dataset
 
+##Based on https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+
 #IMPORTING KEY LIBRARIES TO HELP TO ANALYSE THE DATASET
 import csv
 import pandas
@@ -118,9 +120,9 @@ dataset.hist() #histogram plot of all 4 attributes
 plt.savefig('iris_hist.png')  # save plot
 plt.show() #show plot
 
-## 3.2 PLOT DATAFRAME/SERIES
+## 3.2 LINE CHART - PLOT DATAFRAME/SERIES
  
-### 3.2.1 SEPAL LENGHT
+### 3.2.1 LINE CHART - SEPAL LENGHT
 sl_arr = dataset['sepal-length'].values
 print(type(sl_arr))  # print the type of var
   
@@ -129,13 +131,13 @@ plt.title ('Sepal lenght')
 plt.savefig('iris_plotarray_sepallenght.png')  # save plot
 plt.show()  # show the plot
 
-# 3.2.2 ALL 4 ATTRIBUTES
+# 3.2.2 LINE CHART - ALL 4 ATTRIBUTES
 dataset.plot()  # plot dataframe (pandas)
 plt.title('Iris dataset plot on Dataframe')
 plt.savefig('iris_plotdataframe.png')  # save plot
 plt.show()  # show the plot
 
-# 3.2.3 ALL ATTRIBUTES Y AXIS ON LOG SCALE
+# 3.2.3 LINE CHART - ALL ATTRIBUTES Y AXIS ON LOG SCALE
 dataset.plot()
 plt.yscale('log')  # fixing scales - log scale on vertical axis
 plt.title('Iris dataset log scale on vertical axis')
