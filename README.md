@@ -53,7 +53,7 @@
   <li>https://statistics.laerd.com/statistical-guides/understanding-histograms.php</li>
   </ol>
 
-## Part 2: My investigations (DRAFT)
+## Part 2: My investigations
 [[back to top](#project-instruction)]
 
 Before starting the project some programs, files and libraries were downloaded and installed:
@@ -76,12 +76,12 @@ Before starting the project some programs, files and libraries were downloaded a
  ```
  
 Some information about some of the libraries imported[1]: <br>
-_Pandas_ - for data-frame management package that allows for some useful function on the dataset.<br>
-_Numpy_ - package useful for lineal algebra.<br>
-_Matplotlib_ - good package to contruct visualizations.<br>
-_Seaborn_ - it is based on matplotlib that provides a high-level interface for drawing attractive statistical graphics.<br>
+_Pandas_ - for data-frame management package that allows some useful functions on the dataset.<br>
+_Numpy_ - package useful for linear algebra.<br>
+_Matplotlib_ - good package to construct visualizations.<br>
+_Seaborn_ - it is based on matplotlib and provides a high-level interface for drawing attractive statistical graphics.<br>
 _Scipy_ - a collection of numerical algorithms including statistics.<br>
-_Sklearn_ - package important to do machine learning in python.<br>
+_Sklearn_ - important package to do machine learning in python.<br>
 
 <p align="justify"> I've tried to convert the data from iris data set from strings to float numbers (def function make float) but it didn't work (the last columns couldn't be converted to float or number). The function below was based on Gerhard Van Der Linde posted in moodle discussion page. </p>
 
